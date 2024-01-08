@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina con Video e Testi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue Light', sans-serif;
+      background-image: url('C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\SFONDO GRIGIO.jpg'); /* Sostituisci con il percorso della tua immagine */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #9b9b9bde
+
+    }
+
+
+                                                      #popup {
+                                                        display: none;
+                                                        position: fixed;
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        transform: translate(-50%, -50%);
+                                                        width: 1000px;
+                                                        height: 700px;
+                                                        background-color: white;
+                                                        border: 1px solid black;
+                                                        z-index: 9999;
+                                                      }
+
+
+
+
+    /* BARRA DI RICERCA */
+
+    .search-container {
+    position: absolute;
+    top: 36px;
+    right: 84px;
+    width: 210px;
+    height: 30px;
+    overflow: hidden;
+    border-bottom: 1px solid #000; /* Linea retta sotto la barra di ricerca */
+}
+
+.search-bar {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.search-results {
+    position: absolute;
+    top: 66px; /* Altezza della barra di ricerca + spazio desiderato tra la barra e i risultati */
+    right: 84px;
+    width: 210px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    border: 1px solid #000;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.search-results a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #000;
+}
+
+.search-results a:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* BARRA DI RICERCA FINE  */
+
+
+
+
+
+
+.search-bar {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+
+    #container {
+      max-width: 1280px;
+      width: 100%;
+      height: 800px;
+      display: flex;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+    }
+    
+    #download-icon {
+    position: absolute;
+    right: 36px;
+    top: calc(36px + 110px); /* Regola la distanza dal top se necessario */
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+
+    #left-section {
+      position: relative;
+      flex: 1;
+      display: flex;
+    }
+
+    #mask-container {
+      position: absolute;
+      top: 151px;
+      left: 44px;
+      width: 604px;
+      height: 548.625px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(119, 119, 119, 0.253);
+      display: flex;
+    }
+
+    #video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+
+    /* CATALOGO  */
+
+
+
+  
+                                        
+
+
+    #text-container {
+      position: absolute;
+      top: 300px;
+      left: 678px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .text {
+      font-size: 13pt;
+      color: lightgray;
+      cursor: pointer;
+      transition: color 0.5s ease;
+    }
+
+    #prosegui-button {
+      position: absolute;
+      bottom: 100px;
+      right: 66px;
+      width: 136px;
+      height: 53px;
+      background-color: black;
+      color: white;
+      border: 2px solid black;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #prosegui-button:hover {
+      background-color: white;
+      color: black;
+    }
+
+    #image-bottom-left {
+      position: absolute;
+      bottom: 36px;
+      left: 36px;
+      width: 180px;
+      height: 30px;
+    }
+
+    #home-icon-top-right {
+      position: absolute;
+      top: 36px;
+      right: 36px;
+      width: 30px;
+      height: 30px;
+    }
+
+    #tutorial-text {
+      position: absolute;
+      top: 36px;
+      left: 36px;
+      font-size: 42pt;
+      font-weight: bold;
+    }
+    
+    #ISTRUZIONI-text{
+
+        position: absolute;
+      top: 150px;
+      left: 678px;
+      font-size: 35pt;
+      font-weight: bold;
+
+    }
+
+    .preset-text {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #cccccc; /* Colore grigio chiaro */
+    position: absolute;
+    top: 97px;
+    left: 37px;
+    }
+
+ </style>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+
+
+    <div id="left-section">
+
+
+      <div id="mask-container">
+        <video id="video" controls autoplay playsinline disablePictureInPicture>
+          <!-- Inserisci qui il percorso del tuo video -->
+          <source src="2-PROCEDURA DI ACCENSIONE2.mp4" type="video/mp4">
+          Il tuo browser non supporta il tag video.
+        </video>
+
+      </div>
+
+
+
+
+
+      <div id="text-container">
+        <div class="text" onclick="seekTo(0)">1. Eseguire la procedura di accensione</div>
+        <div class="text" onclick="seekTo(19)">2. Premere e tenere premuto il tasto CONFIG per un tempo superiore a 15 secondi</div>
+        <div class="text" onclick="seekTo(22)">3. Il lampeggio dei led CH1 – CH2 – CH3 – CH4 indica che il Preset della scheda è andato a buon fine</div>
+        <div class="text" onclick="seekTo(23)">4. Spegnere e riaccendere la scheda per entrare nella modalità operativa</div>
+      </div>
+
+  
+      <div id="ISTRUZIONI-text">ISTRUZIONI</div>
+
+
+                                                                  
+ </div>
+
+
+ <div id="popup">
+  <p style="text-align: center; font-size: 24px; padding-top: 50px;">Ciaooo!</p>
+</div>
+
+ 
+      
+    
+
+    
+<div>
+
+<a href="http://www.comepi.eu/wp-content/uploads/2020/05/010-ISTR-03-FC-1019-00-wirelessbatteryless-ITA.pdf" download>
+    <img src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\catalogo.png" alt="Download PDF" class="download-icon">
+</a>
+
+</div>
+
+    
+    <!-- BARRA DI RICERCA-->
+
+    <div class="search-container">
+        <input type="text" class="search-bar" id="searchInput" placeholder="Cerca..." oninput="search()">
+        <div class="search-results" id="searchResults"></div>
+    </div>
+    
+    
+
+    <!-- BARRA DI RICERCA-->
+
+
+
+
+    <div id="prosegui-button" onclick="navigateToNextPage()">PROSEGUI</div>
+
+    <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+
+    <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon" />
+
+    <div class="preset-text">PRESET DEL DISPOSITIVO</div>
+
+      <div id="tutorial-text">Tutorial</div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- JAVA SCRIPT INIZIO-->
+
+  <script>
+
+      // JAVA SCRIPT
+   
+  // BARRA DI RICERCA
+
+  function search() {
+    var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    var elementsToSearch = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Aggiungi altri selettori se necessario
+
+    var searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = ''; // Pulisce i risultati precedenti
+
+    elementsToSearch.forEach(function(element) {
+        var textContent = element.textContent.toLowerCase();
+        if (textContent.includes(searchTerm)) {
+            var resultLink = document.createElement('a');
+            resultLink.href = '#' + element.id; // Assumi che gli elementi abbiano un ID unico
+            resultLink.textContent = element.tagName + ': ' + element.textContent.substr(0, 20) + '...';
+            searchResults.appendChild(resultLink);
+        }
+    });
+
+    if (searchResults.children.length > 0) {
+        searchResults.style.display = 'block';
+    } else {
+        searchResults.style.display = 'none';
+    }
+}
+
+
+
+
+  // Funzione per mostrare il popup dopo la fine del video
+  function showPopup() {
+  console.log('Funzione showPopup chiamata');
+  var popup = document.getElementById('popup');
+  popup.style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var video = document.getElementById('video');
+
+  video.addEventListener('ended', function () {
+    console.log('Video ended!');
+    // Mostra il popup dopo 3 secondi dalla fine del video
+    setTimeout(showPopup, 3000);
+  });
+});
+
+
+
+
+
+    var video = document.getElementById("video");
+
+    var text1 = document.querySelector(".text:nth-child(1)");
+    var text2 = document.querySelector(".text:nth-child(2)");
+    var text3 = document.querySelector(".text:nth-child(3)");
+    var text4 = document.querySelector(".text:nth-child(4)");
+
+    video.addEventListener("timeupdate", function() {
+      var currentTime = video.currentTime;
+
+      if (currentTime >= 0 && currentTime <= 18) {
+        text1.style.color = "black";
+      } else {
+        text1.style.color = "lightgray";
+      }
+
+      if (currentTime >= 19 && currentTime <= 21) {
+        text2.style.color = "black";
+      } else {
+        text2.style.color = "lightgray";
+      }
+
+      if (currentTime >= 22 && currentTime <= 24) {
+        text3.style.color = "black";
+       
+      } else {
+        text3.style.color = "lightgray";
+        
+      }
+
+      if (currentTime >= 25 && currentTime <= 27) {
+     
+        text4.style.color = "black";
+      } else {
+     
+        text4.style.color = "lightgray";
+      }
+    });
+
+    function seekTo(time) {
+      video.currentTime = time;
+    }
+
+    function navigateToNextPage() {
+      // Inserisci qui il collegamento alla tua pagina successiva
+      window.location.href = "pagina_successiva.html";
+    }
+
+
+  
+
+
+
+    
+  </script>
+</body>
+</html>
