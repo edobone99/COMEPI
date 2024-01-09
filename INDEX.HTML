@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    #banner {
+      width: 700px;
+      height: 450px;
+      margin: 250px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 15px; /* Angoli smussati del banner */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Effetto ombreggiatura del 30% */
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #logo {
+      width: 232px;
+      height: 40px;
+      margin: 20px auto 50px; /* Esempio di spostamento: 20px in alto, 50px in basso */
+      display: block;
+    }
+
+    input {
+      width: 260px; /* Larghezza della casella di testo */
+      padding: 10px;
+      margin: 10px auto; /* Esempio di spostamento: 10px in alto */
+      display: block;
+      font-family:Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #ccc; /* Linea al posto del bordo */
+      background-color: transparent; /* Sfondo trasparente */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: center; /* Allinea il testo al centro rispetto all'altezza */
+      line-height: 35px; /* Altezza del logo */
+      vertical-align: middle;
+      font-family:Arial, Helvetica, sans-serif;
+      margin-top: 10px; /* Esempio di spostamento: 10px in basso */
+    }
+
+    button {
+      width: 170px;
+      height: 37px;
+      padding: 10px;
+      background-color: #000; /* Colore nero */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 30px; /* Angoli smussati del bottone */
+      display: block;
+      margin: 55px auto 0; /* Esempio di spostamento: 40px in alto */
+    }
+
+    button:hover {
+      background-color: #868686; /* Colore nero più scuro al passaggio del mouse */
+    }
+
+    #error-message {
+      color: red;
+      margin-bottom: 10px;
+      right: 50px;
+      
+    }
+  </style>
+</head>
+<body>
+
+<div id="banner">
+  <img id="logo" src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\comepi_srl_cover2.png" alt="Logo">
+
+  <label for="code">USER</label>
+  <input type="text" id="code" placeholder="Inserisci l'Username">
+
+  <label for="password">Password</label>
+  <input type="password" id="password" placeholder="Inserisci la password">
+
+  <button onclick="checkCredentials()">ACCEDI</button>
+
+  <p id="error-message"></p>
+</div>
+
+<script>
+  function checkCredentials() {
+    var codeInput = document.getElementById("code").value;
+    var passwordInput = document.getElementById("password").value;
+    var errorMessage = document.getElementById("error-message");
+
+    if (codeInput === "COMEPI_USER" && passwordInput === "PUCCI") {
+      // Credenziali corrette, reindirizzamento alla pagina successiva
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/1_index_COMEPI.html"; 
+    } else {
+      // Credenziali errate, visualizza un messaggio di errore
+      errorMessage.textContent = "Credenziali errate. Riprova.";
+    }
+  }
+</script>
+
+</body>
+</html>
