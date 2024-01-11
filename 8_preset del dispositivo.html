@@ -88,59 +88,71 @@
 
 /* BARRA DI RICERCA */
 
-                              .search-container {
-                              position: absolute;
-                              top: 36px;
-                              right: 84px;
-                              width: 210px;
-                              height: 30px;
-                              overflow: hidden;
-                              border-bottom: 1px solid #000; /* Linea retta sotto la barra di ricerca */
-                          }
 
-                            .search-bar {
-                                width: 100%;
-                                height: 100%;
-                                border: none;
-                                outline: none;
-                                font-size: 14px;
-                                padding: 5px;
-                                box-sizing: border-box;
-                            }
 
-                            .search-results {
-                                position: absolute;
-                                top: 66px; /* Altezza della barra di ricerca + spazio desiderato tra la barra e i risultati */
-                                right: 84px;
-                                width: 210px;
-                                max-height: 150px;
-                                overflow-y: auto;
-                                display: none;
-                                border: 1px solid #000;
-                                background-color: #fff;
-                                z-index: 1;
-                            }
+  
 
-                            .search-results a {
-                                display: block;
-                                padding: 8px;
-                                text-decoration: none;
-                                color: #000;
-                            }
 
-                            .search-results a:hover {
-                                background-color: #f0f0f0;
-                            }
 
-                            .search-bar {
-                                width: 100%;
-                                height: 100%;
-                                border: none;
-                                outline: none;
-                                font-size: 14px;
-                                padding: 5px;
-                                box-sizing: border-box;
-                            }
+.search-bar {
+
+width: 200px;
+
+height: 30px;
+
+position: absolute;
+
+top: 36px;
+
+right: 150px;
+
+}
+
+
+
+
+
+
+  /* Stili per i risultati della ricerca */
+
+
+
+
+
+  #searchResults {
+
+    display: none;
+
+    background-color: black;
+
+    color: white;
+
+    position: absolute;
+
+    width: 50%;
+
+    top: 40px;
+
+   right: 20px; 
+
+    z-index: 1;
+
+
+
+overflow-y: auto;
+
+width: fit-content; /* Larghezza dinamica in base al contenuto */
+
+
+
+  }
+
+
+
+
+
+
+
 
 /* BARRA DI RICERCA FINE  */
 
@@ -281,6 +293,16 @@
                               }
 
 
+
+
+                              
+                            
+
+
+
+
+
+
     /* TESTO: TUTORIAL */
 
                               #tutorial-text {
@@ -405,8 +427,13 @@
     <!-- BARRA DI RICERCA-->
 
               <div class="search-container">
-                  <input type="text" class="search-bar" id="searchInput" placeholder="Cerca..." oninput="search()">
-                  <div class="search-results" id="searchResults"></div>
+                <input type="text" id="searchInput" class="search-bar" placeholder="Cerca...">
+
+                <div id="searchResults">
+              
+                  <ul id="resultsList"></ul>
+              
+                </div>
               </div>
               
     
@@ -515,30 +542,75 @@
    
   // BARRA DI RICERCA
 
-                        function search() {
-                          var searchTerm = document.getElementById('searchInput').value.toLowerCase();
-                          var elementsToSearch = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Aggiungi altri selettori se necessario
+  document.getElementById("searchInput").addEventListener("keyup", function(event) {
 
-                          var searchResults = document.getElementById('searchResults');
-                          searchResults.innerHTML = ''; // Pulisce i risultati precedenti
+if (event.key === 'Enter') {
 
-                          elementsToSearch.forEach(function(element) {
-                              var textContent = element.textContent.toLowerCase();
-                              if (textContent.includes(searchTerm)) {
-                                  var resultLink = document.createElement('a');
-                                  resultLink.href = '#' + element.id; // Assumi che gli elementi abbiano un ID unico
-                                  resultLink.textContent = element.tagName + ': ' + element.textContent.substr(0, 20) + '...';
-                                  searchResults.appendChild(resultLink);
-                              }
-                          });
+  var filter = document.getElementById('searchInput').value.toUpperCase();
 
-                          if (searchResults.children.length > 0) {
-                              searchResults.style.display = 'block';
-                          } else {
-                              searchResults.style.display = 'none';
-                          }
-                      }
-                        
+  var resultsList = document.getElementById('resultsList');
+
+  var resultsCount = 0;
+
+
+
+  var elementsToSearch = document.querySelectorAll('   #tutorial-text,#ISTRUZIONI-text,#home-icon-top-right,#image-bottom-left,.preset-text,.text,#text-container '); // Aggiungi qui tutte le classi in cui desideri cercare
+
+
+
+  resultsList.innerHTML = '';
+
+
+
+  elementsToSearch.forEach(function(element, index) {
+
+    if (resultsCount < 4 && element.textContent.toUpperCase().includes(filter)) {
+
+      var result = document.createElement('li');
+
+      result.textContent = element.textContent;
+
+      result.style.color = 'white';
+
+      result.style.backgroundColor = 'black';
+
+      result.style.padding = '8px 16px';
+
+      
+
+      // Aggiungi una linea bianca tra i risultati, tranne per l'ultimo
+
+      if (index < elementsToSearch.length - 1) {
+
+        var line = document.createElement('hr');
+
+        resultsList.appendChild(result);
+
+        resultsList.appendChild(line);
+
+      } else {
+
+        resultsList.appendChild(result);
+
+      }
+
+
+
+      resultsCount++;
+
+    }
+
+  });
+
+
+
+  var searchResults = document.getElementById('searchResults');
+
+  searchResults.style.display = resultsCount > 0 ? 'block' : 'none';
+
+}
+
+});
                       
 
 
@@ -616,36 +688,67 @@
 
 
 
-  function adjustSearchBarPosition() {
-    var windowWidth = window.innerWidth;
+  
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
 
-    // Definisci la dimensione minima della finestra per applicare lo spostamento
-    var minWindowSize = 768;
+if (event.key === 'Enter') {
 
-    // Se la larghezza della finestra è inferiore alla dimensione minima
-    if (windowWidth < minWindowSize) {
-        // Calcola la nuova posizione solo quando la larghezza della finestra attraversa il valore di minWindowSize
-        if (!document.body.classList.contains("search-moved") && windowWidth <= minWindowSize) {
-            document.querySelector(".search-container").style.left = "36px";
-            document.querySelector(".search-container").style.top = "36px";
-            document.body.classList.add("search-moved");
-        }
-    } else {
-        // Ripristina la posizione originale della barra di ricerca
-        document.querySelector(".search-container").style.left = "calc(100% - 300px)";
-        document.querySelector(".search-container").style.top = "36px";
-        document.body.classList.remove("search-moved");
+  var filter = document.getElementById('searchInput').value.toUpperCase();
+
+  var resultsList = document.getElementById('resultsList');
+
+  var resultsCount = 0;
+
+
+
+  var elementsToSearch = document.querySelectorAll('.dispositivi-text, .informazioni-text, .DETTAGLI-text,, #tutorial-text');
+
+
+
+  resultsList.innerHTML = '';
+
+
+
+  elementsToSearch.forEach(function(element) {
+
+    if (resultsCount < 4 && element.textContent.toUpperCase().includes(filter)) {
+
+      var result = document.createElement('li');
+
+      result.textContent = element.textContent;
+
+
+
+      result.addEventListener('click', function() {
+
+        elementsToSearch.forEach(function(item) {
+
+          item.classList.remove('highlight');
+
+        });
+
+        element.classList.add('highlight');
+
+      });
+
+
+
+      resultsList.appendChild(result);
+
+      resultsCount++;
+
     }
+
+  });
+
+
+
+  var searchResults = document.getElementById('searchResults');
+
+  searchResults.style.display = resultsCount > 0 ? 'block' : 'none';
+
 }
 
-// Chiamata iniziale per adattare la posizione della barra di ricerca quando la pagina viene caricata
-window.addEventListener("load", function () {
-    adjustSearchBarPosition();
-});
-
-// Aggiungi un listener per il ridimensionamento della finestra
-window.addEventListener("resize", function () {
-    adjustSearchBarPosition();
 });
 
 

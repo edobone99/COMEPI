@@ -8,80 +8,17 @@
 
 /* SFONDO */
 
-                            body {
-                              margin: 0;
-                              padding: 0;
-                              font-family: 'Helvetica Neue Light', sans-serif;
-                              background-image: url ("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
-                              background-size: cover;
-                              background-position: center;
-                              background-repeat: no-repeat;
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue Light', sans-serif;
+      background-image: url("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-                            }
-
-
-
-
-                         
-
-/* BARRA DI RICERCA */
-
-                              .search-container {
-                              position: absolute;
-                              top: 36px;
-                              right: 84px;
-                              width: 210px;
-                              height: 30px;
-                              overflow: hidden;
-                              border-bottom: 1px solid #000; /* Linea retta sotto la barra di ricerca */
-                          }
-
-                            .search-bar {
-                                width: 100%;
-                                height: 100%;
-                                border: none;
-                                outline: none;
-                                font-size: 14px;
-                                padding: 5px;
-                                box-sizing: border-box;
-                            }
-
-                            .search-results {
-                                position: absolute;
-                                top: 66px; /* Altezza della barra di ricerca + spazio desiderato tra la barra e i risultati */
-                                right: 84px;
-                                width: 210px;
-                                max-height: 150px;
-                                overflow-y: auto;
-                                display: none;
-                                border: 1px solid #000;
-                                background-color: #fff;
-                                z-index: 1;
-                            }
-
-                            .search-results a {
-                                display: block;
-                                padding: 8px;
-                                text-decoration: none;
-                                color: #000;
-                            }
-
-                            .search-results a:hover {
-                                background-color: #f0f0f0;
-                            }
-
-                            .search-bar {
-                                width: 100%;
-                                height: 100%;
-                                border: none;
-                                outline: none;
-                                font-size: 14px;
-                                padding: 5px;
-                                box-sizing: border-box;
-                            }
-
-
-
+   
 
 /* POP UP */
 
@@ -513,11 +450,8 @@
 
     
     <!-- BARRA DI RICERCA-->
-
-              <div class="search-container">
-                  <input type="text" class="search-bar" id="searchInput" placeholder="Cerca..." oninput="search()">
-                  <div class="search-results" id="searchResults"></div>
-              </div>
+   
+  
               
     
 
@@ -659,35 +593,6 @@ JAVA SCRIPT INIZIO-->
   <script>
 
       // JAVA SCRIPT
-   
-  // BARRA DI RICERCA
-
-                        function search() {
-                          var searchTerm = document.getElementById('searchInput').value.toLowerCase();
-                          var elementsToSearch = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Aggiungi altri selettori se necessario
-
-                          var searchResults = document.getElementById('searchResults');
-                          searchResults.innerHTML = ''; // Pulisce i risultati precedenti
-
-                          elementsToSearch.forEach(function(element) {
-                              var textContent = element.textContent.toLowerCase();
-                              if (textContent.includes(searchTerm)) {
-                                  var resultLink = document.createElement('a');
-                                  resultLink.href = '#' + element.id; // Assumi che gli elementi abbiano un ID unico
-                                  resultLink.textContent = element.tagName + ': ' + element.textContent.substr(0, 20) + '...';
-                                  searchResults.appendChild(resultLink);
-                              }
-                          });
-
-                          if (searchResults.children.length > 0) {
-                              searchResults.style.display = 'block';
-                          } else {
-                              searchResults.style.display = 'none';
-                          }
-                      }
-                        
-                      
-
 
                       // Funzione per adattare le dimensioni del video e della maschera alle variazioni della finestra
 
@@ -718,37 +623,6 @@ JAVA SCRIPT INIZIO-->
 
 
 
-  function adjustSearchBarPosition() {
-    var windowWidth = window.innerWidth;
-
-    // Definisci la dimensione minima della finestra per applicare lo spostamento
-    var minWindowSize = 768;
-
-    // Se la larghezza della finestra è inferiore alla dimensione minima
-    if (windowWidth < minWindowSize) {
-        // Calcola la nuova posizione solo quando la larghezza della finestra attraversa il valore di minWindowSize
-        if (!document.body.classList.contains("search-moved") && windowWidth <= minWindowSize) {
-            document.querySelector(".search-container").style.left = "36px";
-            document.querySelector(".search-container").style.top = "36px";
-            document.body.classList.add("search-moved");
-        }
-    } else {
-        // Ripristina la posizione originale della barra di ricerca
-        document.querySelector(".search-container").style.left = "calc(100% - 300px)";
-        document.querySelector(".search-container").style.top = "36px";
-        document.body.classList.remove("search-moved");
-    }
-}
-
-// Chiamata iniziale per adattare la posizione della barra di ricerca quando la pagina viene caricata
-window.addEventListener("load", function () {
-    adjustSearchBarPosition();
-});
-
-// Aggiungi un listener per il ridimensionamento della finestra
-window.addEventListener("resize", function () {
-    adjustSearchBarPosition();
-});
 
 
 

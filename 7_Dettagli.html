@@ -21,11 +21,44 @@
 
 
 
+/* VIDEO CON MASCHERA  */
+
+
+#left-section {
+                              position: relative;
+                              flex: 1;
+                              display: flex;
+                            }
+
+                            #mask-container {
+                              position: absolute;
+                              top: 151px;
+                              left: 1050px;
+                              width: 800px;
+                              height: 548.625px;
+                              border-radius: 30px;
+                              overflow: hidden;
+                              box-shadow: 0 0 20px rgba(119, 119, 119, 0.253);
+                              display: flex;
+                              scale: flex;
+                              flex: 1;
+                            }
+
+                            #video {
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+
 
                          
+                            #edooo-left{ position: absolute;
+                                top: 90px;
+                                right: 840px;
+                                width: auto;
+                                height: 700px;
 
-
-
+                              }
 
                             
 /* BARRA DI RICERCA */
@@ -87,6 +120,9 @@
 
 
 
+
+
+
 /* POP UP */
 
 
@@ -99,8 +135,8 @@
     #prosegui-button {
                             position: absolute;
                             bottom: 100px; /* Distanza iniziale dal margine inferiore */
-                            right: 36px; /* Distanza iniziale dal margine destro */
-                            width: 136px;
+                            right: 56px; /* Distanza iniziale dal margine destro */
+                            width: 170px;
                             height: 53px; /* Altezza desiderata del bottone */
                             background-color: black;
                             color: white;
@@ -215,16 +251,6 @@
 
  
 
-    
-    img, p {
-      
-      max-width: 87%; /* Adatta l'immagine e il testo alla larghezza del loro contenitore */
-      height: auto;
-      width:auto;
-      margin-top: 400 PX
-      ;
-      
-    }
 
 
 
@@ -265,16 +291,6 @@
                                         right: 490px;
                                         color: rgb(83, 83, 83);
                                         }
-
-
-
-
-
-
-
-
-
-                                             
 
 
 
@@ -324,66 +340,18 @@
 
 
 
-    /* Media query per dispositivi mobili */
-    @media only screen and (max-width: 800px) {
-      .custom-text {
-        font-size: 18px;
-        height: 30px;
-        top: 1000px;
-        left: 20px;
-      }
 
       .custom-image {
-        height: 150px;
-        width: 250px;
-        top: 400px;
-        left: 400px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  height: 150px;
+  width: 250px;
+}
+
         
-      }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -393,22 +361,6 @@
 
 
  </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -433,8 +385,15 @@
               </div>
               
     
-
-
+<DIV>
+              <div id="mask-container">
+                <video id="video" controls autoplay playsinline disablePictureInPicture>
+                  <!-- Inserisci qui il percorso del tuo video -->
+                  <source src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\VIDEO DEF\POSIZIONAMENTO\CABLAGGIO1 .mp4" type="video/mp4">
+                  Il tuo browser non supporta il tag video.
+                </video>
+              </div>
+        
 
 
     
@@ -442,7 +401,7 @@
 
     <!-- BOTTONI-->
 
-    <div id="prosegui-button" onclick="navigateToNextPage()">PROSEGUI</div>
+    <div id="prosegui-button" onclick="navigateToNextPage()">INDICE VIDEO</div>
            
 
 
@@ -477,11 +436,11 @@
 
 
 
-           
-         
-           <div class="container">
-            <class="custom-image">
-              <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\PAGINE\DETTAGLI -8.png" alt="Descrizione immagine">
+        <div>      
+
+
+
+          <img id="edooo-left" src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\PAGINE\DETTAGLI -8.png" alt="Immagine" />
    
             </div> 
               <!--TESTI CLASSI QUINDI SONO DENTRO  DENTRO LA PAGINA -->
@@ -806,38 +765,7 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 // Funzione per regolare dimensioni e posizione dell'immagine "image-bottom-left" in base alla larghezza della finestra
 
 
-                                        function adjustImageBottomLeft() {
-                                            var windowWidth = window.innerWidth;
-                                            var initialBottomMargin = 36; // Margine sotto iniziale
-                                            var initialLeftMargin = 36; // Margine sinistro iniziale
-                                            var finalBottomMargin = 10; // Margine sotto finale
-                                            var reductionPercentage = 70; // Percentuale di riduzione
-
-                                            var imageBottomLeft = document.getElementById("image-bottom-left");
-
-                                            if (windowWidth < 600) {
-                                                // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
-                                                var newWidth = (100 - reductionPercentage) / 100 * imageBottomLeft.naturalWidth;
-
-                                                // Applica le nuove dimensioni e posizione all'immagine
-                                                imageBottomLeft.style.width = newWidth + "px";
-                                                imageBottomLeft.style.height = "auto"; // Manteniamo le proporzioni
-                                                imageBottomLeft.style.bottom = finalBottomMargin + "px";
-                                                imageBottomLeft.style.left = initialLeftMargin + "px";
-                                            } else {
-                                                // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
-                                                imageBottomLeft.style.width = "180px";
-                                                imageBottomLeft.style.height = "30px";
-                                                imageBottomLeft.style.bottom = initialBottomMargin + "px";
-                                                imageBottomLeft.style.left = initialLeftMargin + "px";
-                                            }
-                                        }
-
-                                        // Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
-                                        window.addEventListener("load", adjustImageBottomLeft);
-
-                                        // Aggiungi un listener per il ridimensionamento della finestra
-                                        window.addEventListener("resize", adjustImageBottomLeft);
+ 
 
 
 
@@ -860,12 +788,20 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
 
 
+  
+  
+  
+  
+
+
+
+
 // PAGINA SUCCESSIVA
 
 
                           function navigateToNextPage() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/8_preset%20del%20dispositivo.html";
+                            window.location.href ="C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/INDICE%20VIDEO.html";
                           }
 
 

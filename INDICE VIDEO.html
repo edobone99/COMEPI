@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDICE VIDEO</title>
+  <style>
+
+/* SFONDO */
+
+                            body {
+                              margin: 0;
+                              padding: 0;
+                              font-family: 'Helvetica Neue Light', sans-serif;
+                              background-image: url ("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
+                              background-size: cover;
+                              background-position: center;
+                              background-repeat: no-repeat;
+
+                            }
+
+
+
+
+                         
+
+/* BARRA DI RICERCA */
+
+                              .search-container {
+                              position: absolute;
+                              top: 36px;
+                              right: 84px;
+                              width: 210px;
+                              height: 30px;
+                              overflow: hidden;
+                              border-bottom: 1px solid #000; /* Linea retta sotto la barra di ricerca */
+                          }
+
+                            .search-bar {
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                padding: 5px;
+                                box-sizing: border-box;
+                            }
+
+                            .search-results {
+                                position: absolute;
+                                top: 66px; /* Altezza della barra di ricerca + spazio desiderato tra la barra e i risultati */
+                                right: 84px;
+                                width: 210px;
+                                max-height: 150px;
+                                overflow-y: auto;
+                                display: none;
+                                border: 1px solid #000;
+                                background-color: #fff;
+                                z-index: 1;
+                            }
+
+                            .search-results a {
+                                display: block;
+                                padding: 8px;
+                                text-decoration: none;
+                                color: #000;
+                            }
+
+                            .search-results a:hover {
+                                background-color: #f0f0f0;
+                            }
+
+                            .search-bar {
+                                width: 100%;
+                                height: 100%;
+                                border: none;
+                                outline: none;
+                                font-size: 14px;
+                                padding: 5px;
+                                box-sizing: border-box;
+                            }
+
+
+
+
+/* POP UP */
+
+
+
+
+
+                            
+    /* BOTTONE PROSEGUI  CON ROLLOVER*/
+
+    #prosegui-button {
+                            position: absolute;
+                            bottom: 100px; /* Distanza iniziale dal margine inferiore */
+                            right: 36px; /* Distanza iniziale dal margine destro */
+                            width: 136px;
+                            height: 53px; /* Altezza desiderata del bottone */
+                            background-color: black;
+                            color: white;
+                            border: 2px solid black;
+                            border-radius: 40px;
+                            cursor: pointer;
+                            transition: background-color 0.5s ease, color 0.5s ease, width 0.5s ease, right 0.5s ease, bottom 0.5s ease, font-size 0.5s ease;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+
+                          #prosegui-button:hover {
+                            background-color: white;
+                            color: black;
+                          }
+
+                                                                  
+                                                                  
+
+
+
+   
+
+
+
+
+
+
+    /* COMEPI*/
+
+
+                              #image-bottom-left {
+                                position: absolute;
+                                bottom: 36px;
+                                left: 36px;
+                                width: 180px;
+                                height: 30px;
+                              }
+    
+
+    /* ICONA CASA*/
+
+
+
+                              #home-icon-top-right {
+                                position: absolute;
+                                top: 36px;
+                                right: 36px;
+                                width: 30px;
+                                height: 30px;
+                              }
+
+
+    /* INFORMAZIONI TECNINE  */
+
+                              #tutorial-text {
+                                position: absolute;
+                                top: 36px;
+                                left: 36px;
+                                font-size: 50pt;
+                                font-weight: bold;
+                              }
+
+                              
+
+
+
+                           .dispositivi-disponibili-text{
+                                position: absolute;
+                                top: 150px;
+                                left: 200px;
+                                font-size: 30pt;
+                                font-weight: bold;
+                              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
+
+
+
+                              .preset-text {
+                              font-family: 'Helvetica', sans-serif;
+                              font-size: 140px;
+                              font-weight: bold;
+                              color: #cccccc; /* Colore grigio chiaro */
+                              position: absolute;
+                              top: 60px;
+                              left: 37px;
+                              }
+
+
+
+  /* TESTO INTERNO */ 
+
+ 
+
+    
+    img, p {
+      
+      max-width: 100%; /* Adatta l'immagine e il testo alla larghezza del loro contenitore */
+      height: auto;
+      margin-top: 400 PX
+      ;
+      
+    }
+
+
+
+
+
+
+    /* Personalizzazione base */
+    .dispositivi-text {
+      font-family: 'Helvetica', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      height: 50px;
+      position: absolute;
+      top: 200px;
+      right: 400px;
+    }
+
+                                        .con-funzione-di-RICEVITORE {
+
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: light;
+                                        height: 50px;
+                                        position: absolute;
+                                        top: 270px;
+                                        right: 525px;
+                                        color: rgb(83, 83, 83);
+                                        }
+
+
+
+                                        .con-funzione-di-TRASMETTITORE {
+
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: LIGHT;
+                                        height: 50px;
+                                        position: absolute;
+                                        top: 310px;
+                                        right: 490px;
+                                        color: rgb(83, 83, 83);
+                                        }
+
+
+
+
+
+
+
+
+                                        .text-33 {
+                                          font-family: 'Helvetica', sans-serif;
+                                        font-weight: bold;
+                                        font-size: 22px;
+                                       
+                                        position: absolute;
+                                        top: 600px;
+                                        left: 45px;
+                                        color: rgb(83, 83, 83);
+                                      }           
+                                      
+                                      
+
+                                      .text-11 {
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: bold;
+                                        font-size: 22px;
+                                        height: 50px;
+                                        position: absolute;
+                                        top: 600px;
+                                        left: 380px;
+                                        color: rgb(83, 83, 83);
+                                      }     
+
+                                      
+                                      .text-44 {
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: bold;
+                                        font-size: 22px;
+                                        height: 50px;
+                                        position: absolute;
+                                        top: 600px;
+                                        left: 710px;
+                                        color: rgb(83, 83, 83);
+                                      }   
+                                      
+                                      
+                                      .text-55 {
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: bold;
+                                        font-size: 22px;
+                                        height: 50px;
+                                        position: absolute;
+                                        top: 600px;
+                                        left: 1050px;
+                                        color: rgb(83, 83, 83);
+                                      }     
+
+
+                                      .text-66 {
+                                        font-family: 'Helvetica', sans-serif;
+                                        font-weight: bold;
+                                        font-size: 22px;
+                                        height: 50px;
+                                        position: absolute;
+                                        
+                                        top: 600px;
+                                        left: 1400px;
+                                        color: rgb(83, 83, 83);
+                                      }  
+
+
+
+
+                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Media query per dispositivi mobili */
+    @media only screen and (max-width: 900px) {
+      .custom-text {
+        font-size: 18px;
+        height: 30px;
+        top: 1000px;
+        left: 20px;
+      }
+
+      .custom-image {
+        height: 150px;
+        width: 250px;
+        top: 400px;
+        left: 400px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+ /* Quadrati */
+ .square-container {
+      display: flex;
+   
+      align-items: center;
+      bottom:300PX ;
+      margin-bottom: 45px;
+
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: row;
+      margin-top: 250px;
+      margin-LEFT: 30px; /* Regola la distanza dall'alto */
+    }
+    .square {
+      width: 300px;
+      height: 280px;
+      border-radius: 10px;
+      margin-right: 60px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+    }
+
+    .square:last-child {
+      margin-right: 0;
+    }
+
+    .square:hover {
+      transform: scale(1.1);
+    }
+
+    .square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-container {
+      width: 265px;
+      text-align: center;
+      color: #000000; /* Colore testo, modificalo a tuo piacimento */
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0.0; /* Opacità 20% */
+      padding: 10px; /* Padding interno al contenitore del testo */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="left-section">
+
+ <!-- Quadrati con GIF e testo -->
+ <div class="square-container">
+  <div class="square" onclick="navigateToNextPage1()">
+    <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\GIF\ACCENSIONE.gif" alt="ACCENSIONE">
+    
+  </div>
+  <div class="text-33">PROCEDURA <BR>DI ACCENSIONE</div>
+
+   <!-- Quadrati con GIF e testo -->
+
+
+
+
+  <div class="square" onclick="navigateToNextPage2()">
+    <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\GIF\PRESET.gif" alt="PRESET">
+  </div>
+
+  <div class="text-11">PRESET <BR>
+    DEL DISPOSITIVO</div>
+
+
+   <!-- Quadrati con GIF e testo -->
+
+
+
+
+  <div class="square" onclick="navigateToNextPage3()">
+    <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\GIF\TRASMETTITORI WIRELESS.gif" alt="IMPOSTAZIONE DEI TRASMETTITORI WIRELESS">
+  </div>
+
+  <div class="text-44">IMPOSTAZIONI DEI <br> TRASMETTITORI WIRELESS</div>
+
+
+   <!-- Quadrati con GIF e testo -->
+
+
+
+
+  <div class="square" onclick="navigateToNextPage4()">
+    <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\GIF\RELE.gif" alt="GIF 4">
+
+  </div>
+    <div class="text-55">IMPOSTAZIONE DELLA <BR>
+      MODALITA' RELE'</div>
+
+
+       <!-- Quadrati con GIF e testo -->
+
+
+
+
+  <div class="square" onclick="navigateToNextPage5()">
+    <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\GIF\DISTANZA.gif" alt="GIF 5">
+    
+  </div>
+<div class="text-66">PROGETTAZIONE <BR> DEL RAGGIO D'AZIONE</div>
+
+
+
+
+   <!-- Quadrati con GIF e testo -->
+
+
+
+
+
+
+ <!-- Quadrati con GIF e testo -->
+
+    </div>
+
+    </div>
+      
+
+
+    
+    <!-- BARRA DI RICERCA-->
+
+              <div class="search-container">
+                  <input type="text" class="search-bar" id="searchInput" placeholder="Cerca..." oninput="search()">
+                  <div class="search-results" id="searchResults"></div>
+              </div>
+              
+    
+
+
+
+
+    
+
+
+    <!-- BOTTONI-->
+
+    <div id="prosegui-button" onclick="navigateToNextPage()">PROSEGUI</div>
+           
+
+
+
+    <!--ICONE -->
+
+
+              <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+
+
+
+
+
+              <a href="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/1_index_COMEPI.html">
+                <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon">
+            </a>
+
+              
+
+              
+    
+
+
+    <!-- TESTI-->
+
+   
+
+       
+           <div class="preset-text">INDICE VIDEO </div>
+
+
+
+
+           
+         
+             
+   
+            </div> 
+              <!--TESTI CLASSI QUINDI SONO DENTRO  DENTRO LA PAGINA -->
+
+            </a>
+          
+
+
+                 
+     
+
+      
+      </a>
+          
+
+
+          </div>       
+
+
+
+          <!-- <a href="pagina_di_destinazione.html" class="Ricevitore e trasmettitore senza batteria-text"> Ricevitore e trasmettitore senza batteria</a>
+
+                       
+                              
+                              
+                       
+
+
+
+
+
+
+
+
+        
+
+        </div>
+
+
+
+
+
+
+
+
+JAVA SCRIPT INIZIO-->
+
+
+
+  <script>
+
+      // JAVA SCRIPT
+   
+  // BARRA DI RICERCA
+
+                        function search() {
+                          var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                          var elementsToSearch = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6,a' ); // Aggiungi altri selettori se necessario
+
+                          var searchResults = document.getElementById('searchResults');
+                          searchResults.innerHTML = ''; // Pulisce i risultati precedenti
+
+                          elementsToSearch.forEach(function(element) {
+                              var textContent = element.textContent.toLowerCase();
+                              if (textContent.includes(searchTerm)) {
+                                  var resultLink = document.createElement('a');
+                                  resultLink.href = '#' + element.id; // Assumi che gli elementi abbiano un ID unico
+                                  resultLink.textContent = element.tagName + ': ' + element.textContent.substr(0, 20) + '...';
+                                  searchResults.appendChild(resultLink);
+                              }
+                          });
+
+                          if (searchResults.children.length > 0) {
+                              searchResults.style.display = 'block';
+                          } else {
+                              searchResults.style.display = 'none';
+                          }
+                      }
+                        
+                      
+
+
+                      // Funzione per adattare le dimensioni del video e della maschera alle variazioni della finestra
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // FUNZIONE PER MODIFICARE DISPOSIZIONE TESTO SOTTO VIDEO 
+
+
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO  BARRA DI RICERCA
+
+
+
+  function adjustSearchBarPosition() {
+    var windowWidth = window.innerWidth;
+
+    // Definisci la dimensione minima della finestra per applicare lo spostamento
+    var minWindowSize = 768;
+
+    // Se la larghezza della finestra è inferiore alla dimensione minima
+    if (windowWidth < minWindowSize) {
+        // Calcola la nuova posizione solo quando la larghezza della finestra attraversa il valore di minWindowSize
+        if (!document.body.classList.contains("search-moved") && windowWidth <= minWindowSize) {
+            document.querySelector(".search-container").style.left = "36px";
+            document.querySelector(".search-container").style.top = "36px";
+            document.body.classList.add("search-moved");
+        }
+    } else {
+        // Ripristina la posizione originale della barra di ricerca
+        document.querySelector(".search-container").style.left = "calc(100% - 300px)";
+        document.querySelector(".search-container").style.top = "36px";
+        document.body.classList.remove("search-moved");
+    }
+}
+
+// Chiamata iniziale per adattare la posizione della barra di ricerca quando la pagina viene caricata
+window.addEventListener("load", function () {
+    adjustSearchBarPosition();
+});
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", function () {
+    adjustSearchBarPosition();
+});
+
+
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO BOTTONE
+
+
+  function resizeButton() {
+    var button = document.getElementById("prosegui-button");
+    var windowWidth = window.innerWidth;
+
+    // Imposta dimensioni massime e minime per il bottone
+    var maxButtonHeight = 53; // Altezza massima del bottone in pixel
+    var maxButtonwidth = 136; // Altezza massima del bottone in pixel
+    var minButtonHeight = 40; // Altezza minima del bottone in pixel
+    var minWindowSize = 900; // Larghezza minima della finestra per cambiare la posizione del bottone
+    var initialBottomDistance = 100; // Distanza iniziale dal margine inferiore
+    var finalBottomDistance = 5; // Distanza finale dal margine inferiore
+
+    // Calcola la nuova altezza del bottone in base alle dimensioni della finestra
+    var newButtonHeight = Math.min(Math.max(windowWidth * 0.001, minButtonHeight), maxButtonHeight);
+
+    // Applica le nuove dimensioni e posizione al bottone solo se la finestra è sufficientemente ridotta in larghezza
+    if (windowWidth < minWindowSize) {
+      // Calcola la nuova distanza dal basso del bottone in base alle dimensioni della finestra
+      var newBottomDistance = initialBottomDistance - (initialBottomDistance - finalBottomDistance) * (windowWidth / minWindowSize);
+
+      // Applica le nuove dimensioni e posizione al bottone
+      button.style.height = newButtonHeight + "px";
+      button.style.bottom = newBottomDistance + "px";
+    } else {
+      // Ripristina la posizione iniziale
+      button.style.height = maxButtonHeight + "px";
+      button.style.bottom = initialBottomDistance + "px";
+    }
+
+    // Regola il font-size proporzionalmente all'altezza del bottone
+    var fontSizePercentage = (newButtonHeight / maxButtonHeight) * 100;
+    button.style.fontSize = fontSizePercentage + "%";
+  }
+
+  // Chiamata iniziale per adattare le dimensioni del bottone quando la pagina viene caricata
+  window.addEventListener("load", function () {
+    resizeButton();
+  });
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", function () {
+    resizeButton();
+  });
+
+
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO TESTO
+
+
+
+  function adjustTextProperties() {
+    var windowWidth = window.innerWidth;
+
+    // Definisci la dimensione minima della finestra per applicare le modifiche
+    var minWindowSize = 768;
+
+    // Imposta le proprietà iniziali e finali per le scritte
+
+
+       //TUTORIAL
+    var initialFontSizeTutorial = 42;
+    var finalFontSizeTutorial = 25;
+    var initialTopTutorial = 36;
+    var finalTopTutorial = 80;
+
+    //CAPITOLO
+
+    var initialFontSizePreset = 30;
+    var finalFontSizePreset = 18;
+    var initialTopPreset = 97;
+    var finalTopPreset = 120;
+
+    var textTutorial = document.getElementById("tutorial-text");
+    var textPreset = document.querySelector(".preset-text");
+
+    // Se la larghezza della finestra è inferiore alla dimensione minima
+    if (windowWidth < minWindowSize) {
+        // Aggiorna le proprietà delle scritte
+        textTutorial.style.fontSize = finalFontSizeTutorial + "pt";
+        textTutorial.style.top = finalTopTutorial + "px";
+
+        textPreset.style.fontSize = finalFontSizePreset + "pt";
+        textPreset.style.top = finalTopPreset + "px";
+    } else {
+        // Ripristina le proprietà originali delle scritte
+        textTutorial.style.fontSize = initialFontSizeTutorial + "pt";
+        textTutorial.style.top = initialTopTutorial + "px";
+
+        textPreset.style.fontSize = initialFontSizePreset + "pt";
+        textPreset.style.top = initialTopPreset + "px";
+    }
+}
+
+// Chiamata iniziale per adattare le proprietà delle scritte quando la pagina viene caricata
+window.addEventListener("load", function () {
+    adjustTextProperties();
+});
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", function () {
+    adjustTextProperties();
+});
+
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO ICONA CASA
+
+// Funzione per regolare dimensioni e posizione dell'immagine "home-icon-top-right" in base alla larghezza della finestra
+function adjustHomeIconTopRight() {
+    var windowWidth = window.innerWidth;
+    var initialTopMargin = 36; // Margine alto iniziale
+    var initialRightMargin = 36; // Margine destro iniziale
+    var finalTopMargin = 40; // Margine alto finale
+    var reductionPercentage = 40; // Percentuale di riduzione
+
+    var homeIconTopRight = document.getElementById("home-icon-top-right");
+
+    if (windowWidth < 600) {
+        // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
+        var newWidth = (100 - reductionPercentage) / 100 * homeIconTopRight.naturalWidth;
+
+        // Applica le nuove dimensioni e posizione all'immagine
+        homeIconTopRight.style.width = newWidth + "px";
+        homeIconTopRight.style.height = "auto"; // Manteniamo le proporzioni
+        homeIconTopRight.style.top = finalTopMargin + "px";
+        homeIconTopRight.style.right = initialRightMargin + "px";
+    } else {
+        // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
+        homeIconTopRight.style.width = "30px";
+        homeIconTopRight.style.height = "30px";
+        homeIconTopRight.style.top = initialTopMargin + "px";
+        homeIconTopRight.style.right = initialRightMargin + "px";
+    }
+}
+
+// Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
+window.addEventListener("load", adjustHomeIconTopRight);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustHomeIconTopRight);
+
+
+
+
+
+
+
+
+// Funzione per regolare dimensioni e posizione dell'immagine "image-bottom-left" in base alla larghezza della finestra
+
+
+                                        function adjustImageBottomLeft() {
+                                            var windowWidth = window.innerWidth;
+                                            var initialBottomMargin = 36; // Margine sotto iniziale
+                                            var initialLeftMargin = 36; // Margine sinistro iniziale
+                                            var finalBottomMargin = 10; // Margine sotto finale
+                                            var reductionPercentage = 70; // Percentuale di riduzione
+
+                                            var imageBottomLeft = document.getElementById("image-bottom-left");
+
+                                            if (windowWidth < 600) {
+                                                // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
+                                                var newWidth = (100 - reductionPercentage) / 100 * imageBottomLeft.naturalWidth;
+
+                                                // Applica le nuove dimensioni e posizione all'immagine
+                                                imageBottomLeft.style.width = newWidth + "px";
+                                                imageBottomLeft.style.height = "auto"; // Manteniamo le proporzioni
+                                                imageBottomLeft.style.bottom = finalBottomMargin + "px";
+                                                imageBottomLeft.style.left = initialLeftMargin + "px";
+                                            } else {
+                                                // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
+                                                imageBottomLeft.style.width = "180px";
+                                                imageBottomLeft.style.height = "30px";
+                                                imageBottomLeft.style.bottom = initialBottomMargin + "px";
+                                                imageBottomLeft.style.left = initialLeftMargin + "px";
+                                            }
+                                        }
+
+                                        // Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
+                                        window.addEventListener("load", adjustImageBottomLeft);
+
+                                        // Aggiungi un listener per il ridimensionamento della finestra
+                                        window.addEventListener("resize", adjustImageBottomLeft);
+
+
+
+
+
+
+
+
+
+
+  // Chiamata iniziale per adattare le dimensioni quando la pagina viene caricata
+  window.addEventListener("load", resizeVideoAndMask);
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", resizeVideoAndMask);
+
+
+
+
+
+
+
+// PAGINA SUCCESSIVA
+
+
+                          function navigateToNextPage() {
+                            // Inserisci qui il collegamento alla tua pagina successiva
+                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/5-PROTOCOLLO%20DI%20TRASMISSIONE.html";
+                          }
+    function navigateToNextPage1() {
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/8_preset%20del%20dispositivo.html";
+    }
+
+    function navigateToNextPage2() {
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/8_preset%20del%20dispositivo.html";
+    }
+
+    function navigateToNextPage3() {
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/9_impostazione%20dei%20trasmettitori%20wireless.html";
+    }
+
+    function navigateToNextPage4() {
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/10_impostazioni%20della%20modalita%20dei%20rel%C3%A8..html";
+    }
+
+    function navigateToNextPage5() {
+      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/11_MONTAGGIO%20E%20COLLEGAMENTI.html";
+    }
+
+
+
+
+                          
+  </script>
+</body>
+</html>

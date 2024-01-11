@@ -224,85 +224,60 @@
     /* COMEPI*/
 
     
+    .LIMITI-DI-UTILIZZO-text {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+      color: #000000;
+      position: absolute;
+      top: 200px; /* Modifica questo valore per regolare la posizione rispetto al bordo superiore */
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
+    .sotto-testo-text {
+      font-family: 'Helvetica', sans-serif;
+      font-weight: light;
+      width: 1000px;
+      text-align: center;
+      height: 50px;
+      position: absolute;
+      top: 300px; /* Modifica questo valore per regolare la posizione rispetto al bordo superiore */
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgb(83, 83, 83);
+    }
 
-                                                                                    #text-container {
-                                                                                      position: absolute;
-                                                                                      top: 20px;
-                                                                                      left: 1000px;
-                                                                                      align-self: center;
-                                                                                      
-                                                                                      display: flex;
-                                                                                      flex-direction: column;
-                                                                                      gap: 15px;
-                                                                                    }
+    .RATING-AMBIENTALI-text {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 40px;
+      font-weight: bold;
+      color: #000000;
+      position: absolute;
+      text-align: center;
+      top: 500px; /* Modifica questo valore per regolare la posizione rispetto al bordo superiore */
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-       
-
-                              .LIMITI-DI-UTILIZZO-text {
-                              font-family: 'Helvetica', sans-serif;
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: #000000; /* Colore grigio chiaro */
-                              position: relative;
-                              top: 200px;
-                              left: 700px;
-                              align-self: center;
-                              }                                  
-
-
-
-
-
-                                             
-
-
-
-                                            .sotto-testo-text {
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top: 290px;
-                                              left: 70px;
-                                              color: rgb(83, 83, 83);
-                                              text-align: center;
-                                              
-
-                                              }
-
-
-
-
-                              .RATING-AMBIENTALI-text {
-                              font-family: 'Helvetica', sans-serif;
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: #000000; /* Colore grigio chiaro */
-                              position: relative;
-                              top:  450px;
-                              left: 500px;
-                              
-                              }
-
-
-                                            .sotto-testo2-text {
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top: 600px;
-                                              left: 570px;
-                                              color: rgb(83, 83, 83);
-                                              text-align: center;
-
-                                              
-                                              }
+    .sotto-testo2-text {
+      font-family: 'Helvetica', sans-serif;
+      font-weight: light;
+      height: 50px;
+      position: absolute;
+      text-align: center;
+      top: 600px; /* Modifica questo valore per regolare la posizione rispetto al bordo superiore */
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgb(83, 83, 83);
+    }
 
 
 
+
+
+
+    
 
 
 
@@ -544,20 +519,14 @@
 
            
 
-                    <a class="sotto-testo-text">Non utilizzare il dispositivo in applicazioni di sicurezza e protezione verso cose o persone. Non utilizzare in ambienti con continui sbalzi di temperatura,<br>  per i quali possa formarsi condensa all’interno del dispositivo. Non utilizzare in ambienti di lavoro non compatibili con il grado di protezione IP del dispositivo.<br> 
-                      Non installare in ambienti con presenza di polveri o gas infiammabili. <br> Non utilizzare al di fuori dei limiti di temperatura previsti per il funzionamento. Non utilizzare in presenza di agenti chimici particolarmente corrosivi, tali da danneggiare la meccanica del dispositivo. Utilizzare il dispositivo nel pieno rispetto delle norme vigenti, <br> seguendo le istruzioni e impiegandolo in modo conforme ai suoi limiti di funzionamento. In caso di impiego non conforme, mancato rispetto delle istruzioni,<br>  montaggio e manutenzioni eseguite da persone non autorizzate o non specializzate ed omissione delle prove funzionali, il fabbricante viene escluso da ogni responsabilità.
-                      
-                      
-                 
-                      <align=center a class="sotto-testo2-text">Il dispositivo è previsto per applicazioni in interno quadro.<br> 
-                        Il grado di protezione IP in accordo alla EN 60529 è IP20.<br> 
-                        I limiti di temperatura ambiente durante il funzionamento del dispositivo sono 0°C … +55°C. <br> 
-                        Il rating di temperatura superiore previsto dai requisiti UL secondo UL508 è +40°C
-                        
-         
-
-                    
-
+                    <div id="text-container">
+                      <div class="LIMITI-DI-UTILIZZO-text"> LIMITI DI UTILIZZO </div>
+                      <div class="sotto-testo-text">Non utilizzare il dispositivo in applicazioni di sicurezza e protezione verso cose o persone. Non utilizzare in ambienti con continui sbalzi di temperatura, per i quali possa formarsi condensa all’interno del dispositivo. Non utilizzare in ambienti di lavoro non compatibili con il grado di protezione IP del dispositivo. Non installare in ambienti con presenza di polveri o gas infiammabili. Non utilizzare al di fuori dei limiti di temperatura previsti per il funzionamento. Non utilizzare in presenza di agenti chimici particolarmente corrosivi, tali da danneggiare la meccanica del dispositivo. Utilizzare il dispositivo nel pieno rispetto delle norme vigenti, seguendo le istruzioni e impiegandolo in modo conforme ai suoi limiti di funzionamento. In caso di impiego non conforme, mancato rispetto delle istruzioni, montaggio e manutenzioni eseguite da persone non autorizzate o non specializzate ed omissione delle prove funzionali, il fabbricante viene escluso da ogni responsabilità.</div>
+                      <div class="RATING-AMBIENTALI-text"> RATING AMBIENTALI DEL DISPOSITIVO </div>
+                      <div class="sotto-testo2-text">Il dispositivo è previsto per applicazioni in interno quadro. Il grado di protezione IP in accordo alla EN 60529 è IP20. I limiti di temperatura ambiente durante il funzionamento del dispositivo sono 0°C … +55°C. Il rating di temperatura superiore previsto dai requisiti UL secondo UL508 è +40°C</div>
+                    </div>
+                
+                  </div>
 
             </div>
                  
@@ -918,6 +887,50 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
   // Aggiungi un listener per il ridimensionamento della finestra
   window.addEventListener("resize", resizeVideoAndMask);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //RIADATTA TESTO CENTRALE
+
+
+
+
+
+
+  function adjustTextProperties() {
+      var windowWidth = window.innerWidth;
+      var minWindowSize = 800;
+
+      var textContainer = document.getElementById("text-container");
+      var fontSizePercentage = 100;
+
+      if (windowWidth < minWindowSize) {
+        fontSizePercentage = Math.min(Math.max(windowWidth / minWindowSize * 100, 50), 100);
+      }
+
+      textContainer.style.fontSize = fontSizePercentage + "%";
+    }
+
+    // Chiamata iniziale per adattare le proprietà delle scritte quando la pagina viene caricata
+    window.addEventListener("load", function () {
+      adjustTextProperties();
+    });
+
+    // Aggiungi un listener per il ridimensionamento della finestra
+    window.addEventListener("resize", function () {
+      adjustTextProperties();
+    });
 
 
 
