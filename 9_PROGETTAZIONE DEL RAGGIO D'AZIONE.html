@@ -666,7 +666,7 @@ if (event.key === 'Enter') {
 
     // Definisci valori di espansione massima e minima
     var maxExpansion = 1; // Espansione massima
-    var minExpansion = 0.65; // Espansione minima
+    var minExpansion = 0.55; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
     var newMaskWidth = Math.min(Math.max(windowWidth * 0.6, videoWidth * minExpansion), videoWidth * maxExpansion);
@@ -681,11 +681,11 @@ if (event.key === 'Enter') {
     video.style.height = "100%";
 
     // Verifica se la larghezza della finestra è inferiore a un certo valore
-    if (windowWidth < 768) {
+    if (windowWidth < 1000) {
       // Se sì, sposta il textContainer e istruzioniText sotto la maschera
       textContainer.style.top = newMaskHeight + 240 + "px";
       textContainer.style.left = "36px";
-      textContainer.style.right = "36px";
+      textContainer.style.right = "70px";
       istruzioniText.style.top = newMaskHeight + 175 + "px";
       istruzioniText.style.left = "36px";
     } else {
