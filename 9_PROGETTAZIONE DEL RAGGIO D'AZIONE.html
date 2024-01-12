@@ -669,7 +669,7 @@ if (event.key === 'Enter') {
     var minExpansion = 0.55; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
-    var newMaskWidth = Math.min(Math.max(windowWidth * 0.6, videoWidth * minExpansion), videoWidth * maxExpansion);
+    var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
 
     // Calcola la nuova altezza della maschera mantenendo le proporzioni originali del video
     var newMaskHeight = (newMaskWidth / videoWidth) * videoHeight;
