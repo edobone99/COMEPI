@@ -11,14 +11,8 @@
                             body {
                               margin: 0;
                               padding: 0;
-
-
-
-
-
-                              
                               font-family: 'Helvetica Neue Light', sans-serif;
-                              background-image: url ("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
+                              background-image: url ("SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
                               background-size: cover;
                               background-position: center;
                               background-repeat: no-repeat;
@@ -461,14 +455,14 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
     <!--ICONE -->
 
 
-              <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+              <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
 
 
 
 
               <a href="url_DEL LINK ">
-                <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon">
+                <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
 
 
 
@@ -671,8 +665,25 @@ if (event.key === 'Enter') {
     video.style.width = "100%";
     video.style.height = "100%";
 
+
     // Verifica se la larghezza della finestra è inferiore a un certo valore
     if (windowWidth < 1400) {
+      // Se sì, sposta il textContainer e istruzioniText sotto la maschera
+    
+      textContainer.style.left = "600px";
+      textContainer.style.right = "70px";
+     
+      istruzioniText.style.left = "600px";
+    } else {
+      // Altrimenti, ripristina la posizione originale
+      textContainer.style.top = "245px";
+      textContainer.style.left = "700px";
+      istruzioniText.style.top = "150px";
+      istruzioniText.style.left = "678px";
+    }
+
+    // Verifica se la larghezza della finestra è inferiore a un certo valore
+    if (windowWidth < 1300) {
       // Se sì, sposta il textContainer e istruzioniText sotto la maschera
     
       textContainer.style.left = "600px";
@@ -688,26 +699,8 @@ if (event.key === 'Enter') {
     }
 
 
-
-
-
-    var downloadicon = document.getElementById("download-icon");
-
-
-      if (windowWidth < 1400) {
-     
-    
-      downloadicon.style.left = "600px";
-      downloadicon.style.top = "570px";
-     
-    
-    } else {
-      // Altrimenti, ripristina la posizione originale
-      downloadicon.style.top = "800px";
-      downloadicon.style.left = "678px";
-   
-    }
   }
+
 
 
 
@@ -1079,10 +1072,7 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
 
 
-  window.addEventListener("load", resizeVideoAndMask);
 
-  // Aggiungi un listener per il ridimensionamento della finestra
-  window.addEventListener("resize", resizedownloadlink);
 
 
 
@@ -1092,10 +1082,10 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
 
   // Chiamata iniziale per adattare le dimensioni quando la pagina viene caricata
-  window.addEventListener("load", resizedownloadicon);
+  window.addEventListener("load", resizeVideoAndMask);
 
   // Aggiungi un listener per il ridimensionamento della finestra
-  window.addEventListener("resize", resizedownloadicon);
+  window.addEventListener("resize", resizeVideoAndMask);
 
 
 
