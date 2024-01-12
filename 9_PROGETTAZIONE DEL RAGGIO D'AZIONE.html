@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COMEPI PROGETTAZIONE DEL RAGGIO D'AZIONE</title>
   <style>
 
@@ -11,27 +11,20 @@
                             body {
                               margin: 0;
                               padding: 0;
+
+
+
+
+
+                              
                               font-family: 'Helvetica Neue Light', sans-serif;
-                              background-image: url ("SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
+                              background-image: url ("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
                               background-size: cover;
                               background-position: center;
                               background-repeat: no-repeat;
                               overflow-y: hidden;
 
                             }
-
-
-
-                            #INDICE-text {
-      font-family: 'Helvetica', sans-serif;
-      font-weight: bold;
-      font-size: 2vw; /* Utilizza una dimensione relativa in base alla larghezza della finestra */
-      height: 50px;
-      position: absolute;
-      top: 48px;
-      left: 255px;
-      color: rgba(83, 83, 83, 0.534);
-    }
 
 
 
@@ -221,7 +214,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
                             #download-icon {
             position: fixed;
-            right: 700px;
+            left: 650px;
             bottom: 110px;
             width: 22px;
             height: 31px;
@@ -390,8 +383,6 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
 
 
-      <div id="INDICE-text" onclick="navigateToNextPage2()"> - INDICE</div>
-
 
 
 
@@ -470,14 +461,14 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
     <!--ICONE -->
 
 
-              <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+              <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
 
 
 
 
-              <a href="indice_COMEPI.html">
-                <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
+              <a href="url_DEL LINK ">
+                <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon">
 
 
 
@@ -666,7 +657,7 @@ if (event.key === 'Enter') {
 
     // Definisci valori di espansione massima e minima
     var maxExpansion = 1; // Espansione massima
-    var minExpansion = 0.55; // Espansione minima
+    var minExpansion = 0.5; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
     var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
@@ -681,13 +672,13 @@ if (event.key === 'Enter') {
     video.style.height = "100%";
 
     // Verifica se la larghezza della finestra è inferiore a un certo valore
-    if (windowWidth < 1000) {
+    if (windowWidth < 1400) {
       // Se sì, sposta il textContainer e istruzioniText sotto la maschera
-      textContainer.style.top = newMaskHeight + 240 + "px";
-      textContainer.style.left = "36px";
+    
+      textContainer.style.left = "600px";
       textContainer.style.right = "70px";
-      istruzioniText.style.top = newMaskHeight + 175 + "px";
-      istruzioniText.style.left = "36px";
+     
+      istruzioniText.style.left = "600px";
     } else {
       // Altrimenti, ripristina la posizione originale
       textContainer.style.top = "245px";
@@ -695,7 +686,33 @@ if (event.key === 'Enter') {
       istruzioniText.style.top = "150px";
       istruzioniText.style.left = "678px";
     }
+
+
+
+
+
+    var downloadicon = document.getElementById("download-icon");
+
+
+      if (windowWidth < 1400) {
+     
+    
+      downloadicon.style.left = "600px";
+      downloadicon.style.top = "570px";
+     
+    
+    } else {
+      // Altrimenti, ripristina la posizione originale
+      downloadicon.style.top = "800px";
+      downloadicon.style.left = "678px";
+   
+    }
   }
+
+
+
+
+  
 
 
 
@@ -1062,7 +1079,10 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
 
 
+  window.addEventListener("load", resizeVideoAndMask);
 
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", resizedownloadlink);
 
 
 
@@ -1072,10 +1092,10 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
 
   // Chiamata iniziale per adattare le dimensioni quando la pagina viene caricata
-  window.addEventListener("load", resizeVideoAndMask);
+  window.addEventListener("load", resizedownloadicon);
 
   // Aggiungi un listener per il ridimensionamento della finestra
-  window.addEventListener("resize", resizeVideoAndMask);
+  window.addEventListener("resize", resizedownloadicon);
 
 
 
@@ -1184,12 +1204,7 @@ function disableScroll() {
 
                           function navigateToNextPage() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="10_ACCENSIONE.html";
-                          }
-                          
-                          function navigateToNextPage2() {
-                            // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="INDICE%20VIDEO.html";
+                            window.location.href ="10_preset%20del%20dispositivo.html";
                           }
   </script>
 </body>
