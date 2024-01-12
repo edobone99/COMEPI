@@ -24,25 +24,20 @@
 /* VIDEO CON MASCHERA  */
 
 
-#left-section {
-                              position: relative;
-                              flex: 1;
-                              display: flex;
-                            }
 
                             #mask-container {
-                              position: absolute;
-                              top: 151px;
-                              left: 1050px;
-                              width: 800px;
-                              height: 548.625px;
-                              border-radius: 30px;
-                              overflow: hidden;
-                              box-shadow: 0 0 20px rgba(119, 119, 119, 0.253);
-                              display: flex;
-                              scale: flex;
-                              flex: 1;
-                            }
+    position: absolute;
+    top: 30%; /* Altezza percentuale rispetto alla finestra */
+    left:59%; /* Distanza percentuale dal margine sinistro */
+    width: 38%; /* Larghezza percentuale rispetto alla finestra */
+    height: auto; /* Altezza automatica mantenendo le proporzioni */
+    border-radius:0%; /* Border-radius percentuale */
+    overflow: hidden;
+    box-shadow: 0 0 2% rgba(119, 119, 119, 0.253); /* Box-shadow percentuale */
+    display: absolute;
+    scale: flex;
+    flex: 1;
+}
 
                             #video {
                               width: 100%;
@@ -52,14 +47,12 @@
 
 
                          
-                            #edooo-left{ position: absolute;
-                                top: 90px;
-                                right: 840px;
-                                width: auto;
-                                height: 700px;
+                            #edooo-left {
+    position: absolute;
 
-                              }
-
+    width: 55%; /* Larghezza percentuale rispetto alla finestra */
+    height: auto; /* Altezza automatica mantenendo le proporzioni */
+}
                             
 /* BARRA DI RICERCA */
 
@@ -499,6 +492,77 @@ JAVA SCRIPT INIZIO-->
 
       // JAVA SCRIPT
    
+      function adjustImagePosition() {
+    var windowWidth = window.innerWidth;
+    var initialLeftPercentage = 0; // Posizione iniziale rispetto al bordo sinistro in percentuale
+    var finalLeftPercentage = 0; // Posizione finale rispetto al bordo sinistro in percentuale
+    var initialTopPercentage = -8; // Posizione iniziale rispetto al bordo superiore in percentuale
+    var finalTopPercentage = 20; // Posizione finale rispetto al bordo superiore in percentuale
+    var minWindowSize = 600; // Dimensione minima della finestra per applicare la posizione finale
+
+    var edoooImage = document.getElementById("edooo-left");
+
+    // Calcola la nuova posizione in base alla larghezza della finestra
+    var newLeft = initialLeftPercentage + (finalLeftPercentage - initialLeftPercentage) * (windowWidth / minWindowSize);
+    var newTop = initialTopPercentage + (finalTopPercentage - initialTopPercentage) * (windowWidth / minWindowSize);
+
+    // Applica le nuove posizioni all'immagine
+    edoooImage.style.left = newLeft + "%";
+    edoooImage.style.top = newTop + "%";
+  }
+
+  // Chiamata iniziale per adattare la posizione dell'immagine quando la pagina viene caricata
+  window.addEventListener("load", adjustImagePosition);
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", adjustImagePosition);
+
+
+  function adjustImagePosition() {
+    var windowWidth = window.innerWidth;
+    var minWindowSize = 700; // Dimensione minima della finestra
+    var maxWindowSize = 1000; // Dimensione massima della finestra
+
+    var edoooImage = document.getElementById("edooo-left");
+
+    // Personalizza questi valori in base alle tue esigenze
+    var initialTopPercentage = 7; // Posizione iniziale rispetto al bordo superiore in percentuale
+    var finalTopPercentage = 20; // Posizione finale rispetto al bordo superiore in percentuale
+
+    // Se la larghezza della finestra è compresa tra 700 px e 1000 px
+    if (windowWidth >= minWindowSize && windowWidth <= maxWindowSize) {
+      // Calcola la nuova posizione in base alla larghezza della finestra
+      var positionPercentage = (windowWidth - minWindowSize) / (maxWindowSize - minWindowSize);
+      var newTop = initialTopPercentage + positionPercentage * (finalTopPercentage - initialTopPercentage);
+      edoooImage.style.top = newTop + "%";
+    } else {
+      // Se la larghezza è al di fuori dell'intervallo, utilizza la posizione finale
+      edoooImage.style.top = finalTopPercentage + "%";
+    }
+  }
+
+  // Chiamata iniziale per adattare la posizione dell'immagine quando la pagina viene caricata
+  window.addEventListener("load", adjustImagePosition);
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", adjustImagePosition);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // BARRA DI RICERCA
 
                         function search() {

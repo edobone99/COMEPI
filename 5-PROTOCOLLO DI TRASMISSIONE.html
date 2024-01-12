@@ -8,16 +8,15 @@
 
 /* SFONDO */
 
-                            body {
-                              margin: 0;
-                              padding: 0;
-                              font-family: 'Helvetica Neue Light', sans-serif;
-                              background-image: url ("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
-                              background-size: cover;
-                              background-position: center;
-                              background-repeat: no-repeat;
-
-                            }
+body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue Light', sans-serif;
+            background-image: url("C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
 
 
@@ -222,151 +221,68 @@
 
 
 
-                                                                                    #text-container {
-                                                                                      position: absolute;
-                                                                                      top: 20px;
-                                                                                      left: 1000px;
-                                                                                      align-self: center;
-                                                                                      
-                                                                                      display: flex;
-                                                                                      flex-direction: column;
-                                                                                      gap: 15px;
-                                                                                    }
+    .text-container {
+            position: absolute;
+            top: 5vw;
+            left: 50vw;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-       
+        .protocollo-text, .direttive-text, .approvazioni-text {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 2.5vw;
+            height: 5vw;
+            top: 200;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+        }
 
-                              .PROTOCOLLO-text {
-                              font-family: 'Helvetica', sans-serif;
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: #000000; /* Colore grigio chiaro */
-                              position: relative;
-                              top: 100px;
-                              left: 700px;
-                              align-self: center;
-                              }                                  
+        .sotto-testo-text, .sotto-testo2-text, .sotto-testo3-text, .sotto-testo4-text {
+            font-family: 'Helvetica', sans-serif;
+            font-weight: LIGHT;
+            height: 5vw;
+            color: rgb(83, 83, 83);
+            text-align: center;
+        }
 
+        .sotto-testo3-text {
+            text-align: left;
+        }
 
-
-
-
-                                             
-
-
-
-                                            .sotto-testo-text {
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top: 200px;
-                                              left: 430px;
-                                              color: rgb(83, 83, 83);
-                                              text-align: center;
-                                              
-
-                                              }
-
-
-
-
-                              .DIRETTIVE-text {
-                              font-family: 'Helvetica', sans-serif;
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: #000000; /* Colore grigio chiaro */
-                              position: relative;
-                              top:  280px;
-                              left: 600px;
-                              
-                              }
-
-
-                                            .sotto-testo2-text {
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top: 420px;
-                                              left: 650px;
-                                              color: rgb(83, 83, 83);
-                                              text-align: center;
-
-                                              
-                                              }
-
-
-
-
-
-
-                                              .APPROVAZIONI-text {
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-size: 40px;
-                                              font-weight: bold;
-                                              color: #000000; /* Colore grigio chiaro */
-                                              position: relative;
-                                              top:  450px;
-                                              left: 700px;
-                                              
-                                              }
-
-
-
-
-
-                                              .sotto-testo3-text {
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top:  650px;
-                                              left: 550px;
-                                              text-align:left;
-                                              color: rgb(83, 83, 83);
-
-                                              }
-
-
-                                            
-                                              .sotto-testo4-text {  
-
-                                              font-family: 'Helvetica', sans-serif;
-                                              font-weight: LIGHT;
-                                              height: 50px;
-                                              position: fixed;
-                                              top: 650px;
-                                              text-align:right;
-                                              right:  550px;
-                                        
-                                              color: rgb(83, 83, 83);
-
+        .sotto-testo4-text {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: light;
+    height: 5vw;
+    color: rgb(83, 83, 83);
+    text-align: right;
+    position: relative;  /* Aggiunto per abilitare il posizionamento relativo */
+    top: -110px;  /* Regola la distanza dal top a tuo piacimento */
+    right: 20px;  /* Regola la distanza dal right a tuo piacimento */
 }
 
+/* Aggiungi le seguenti regole CSS per spostare il testo .sotto-testo4-text all'inizio su schermi più piccoli */
+@media only screen and (max-width: 767px) {
+    .sotto-testo4-text {
+        text-align: left;  /* Cambia l'allineamento a sinistra su schermi più piccoli */
+        right: auto;  /* Rimuovi la distanza dal right */
+        left: 20px;  /* Aggiungi la distanza dal left a tuo piacimento */
+        top: 0;  /* Resetta la distanza dal top */
+    }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .protocollo-text, .direttive-text, .approvazioni-text {
+        text-align: left;  /* Cambia l'allineamento a sinistra su schermi più piccoli */
+        right: auto;  /* Rimuovi la distanza dal right */
+        left: 20px;  /* Aggiungi la distanza dal left a tuo piacimento */
+        top: 0;  /* Resetta la distanza dal top */
+    }
+}
 
 
 
@@ -514,14 +430,9 @@
 
    
 
-             
-           <div class="PROTOCOLLO-text"> Protocollo di trasmissione </div>
 
 
-           <div class="DIRETTIVE-text"> Direttive e regolamenti di riferimento </div>
 
-
-           <div class="APPROVAZIONI-text"> Approvazioni e validazioni </div>
 
 
 
@@ -537,36 +448,45 @@
             <div id="text-container">
 
 
+              <div class="text-container">
+                <div class="protocollo-text">Protocollo di trasmissione</div>
 
+
+                <div class="sotto-testo-text">La trasmissione tra trasmettitore e ricevitore avviene tramite protocollo ENOCEAN.<br> La generazione del segnale è realizzata senza l’ausilio di batterie, tramite la conversione dell’energia cinetica creata dall’attuazione del dispositivo.<br>
+                  La trasmissione avviene con frequenza 868MHz per i dispositivi RFH8 e RRH8, 902MHz per i dispositivi RFH9 e RRH9.</div>
+
+
+                <div class="direttive-text">Direttive e regolamenti di riferimento</div>
+
+
+                <div class="sotto-testo2-text">Direttiva RED 2014/53/EU (RRH8) – REGOLAMENTO FCC PART 15B (RRH9) - <br> 
+                  REGOLAMENTO ICES-003 (RRH9) – Direttiva RoHS2 2011/65/CE + Direttiva<br>
+                  delegata UE 2015/863 – Regolamento REACH.</div>
+
+
+                <div class="approvazioni-text">Approvazioni e validazioni</div>
+
+
+                <div class="sotto-testo3-text">CE secondo Direttiva RED 2014/53/EU (RRH8) <br>    
+                  CE secondo Direttiva RED 2014/53/EU (RFH8)    <br> 
+                  UL secondo UL 508 (RRH8 ed RRH9)  <br>  
+                  FCC SDoC (RRH9)          <br>                       
+                  IC SDoC (RRH9)<br>                         
+                  FCC (RFH9)   <br>     
+                  IC (RFH9)  <br> </div>
+
+                
+                <div class="sotto-testo4-text">DDC25 scaricabile sul sito www.comepi.eu<br>  
+                  DDC24 scaricabile sul sito www.comepi.eu<br>  
+                             cULus LISTED – NKCR – E189258<br>  
+SDoCFCC01 scaricabile sul sito www.comepi.eu<br>  
+SDoCIC01 scaricabile sul sito www.comepi.eu<br>  
+Contiene FCC ID SZV-PTM330U Contiene IC ID 5713A-PTM330U<br>  
+Contiene IC ID 5713A-PTM330U.</div>
+            </div>
            
 
-                    <a class="sotto-testo-text">La trasmissione tra trasmettitore e ricevitore avviene tramite protocollo ENOCEAN.<br> La generazione del segnale è realizzata senza l’ausilio di batterie, tramite la conversione dell’energia cinetica creata dall’attuazione del dispositivo.<br>
-                      La trasmissione avviene con frequenza 868MHz per i dispositivi RFH8 e RRH8, 902MHz per i dispositivi RFH9 e RRH9.
-                      
-                 
-                      <align=center a class="sotto-testo2-text">Direttiva RED 2014/53/EU (RRH8) – REGOLAMENTO FCC PART 15B (RRH9) - <br> 
-                        REGOLAMENTO ICES-003 (RRH9) – Direttiva RoHS2 2011/65/CE + Direttiva<br>
-                        delegata UE 2015/863 – Regolamento REACH.
-                        
-         
-
-                        <a class="sotto-testo3-text">CE secondo Direttiva RED 2014/53/EU (RRH8) <br>    
-                          CE secondo Direttiva RED 2014/53/EU (RFH8)    <br> 
-                          UL secondo UL 508 (RRH8 ed RRH9)  <br>  
-                          FCC SDoC (RRH9)          <br>                       
-                          IC SDoC (RRH9)<br>                         
-                          FCC (RFH9)   <br>     
-                          IC (RFH9)  <br>  
-
-
-                          <a class="sotto-testo4-text"> DDC25 scaricabile sul sito www.comepi.eu<br>  
-                                                        DDC24 scaricabile sul sito www.comepi.eu<br>  
-                                                                   cULus LISTED – NKCR – E189258<br>  
-                            SDoCFCC01 scaricabile sul sito www.comepi.eu<br>  
-                            SDoCIC01 scaricabile sul sito www.comepi.eu<br>  
-                            Contiene FCC ID SZV-PTM330U Contiene IC ID 5713A-PTM330U<br>  
-                            Contiene IC ID 5713A-PTM330U.
-             
+                    
            
 
 

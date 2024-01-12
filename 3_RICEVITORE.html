@@ -19,9 +19,15 @@
 
                             }
 
-
-
-
+                            #custom-image {
+      position: absolute;
+      top: 200px;
+      left: 50px;
+      width: auto;
+      height: auto;
+      max-width: calc(100% - 400px);
+      max-height: calc(120% - 200px);
+    }
                          
 
 /* BARRA DI RICERCA */
@@ -212,14 +218,7 @@
  
 
     
-    img, p {
-      
-      max-width: 90%; /* Adatta l'immagine e il testo alla larghezza del loro contenitore */
-      height: auto;
-      top: 1000 PX
-      ;
-      
-    }
+
 
 
 
@@ -292,7 +291,7 @@
                                               font-family: 'Helvetica', sans-serif;
                                               font-weight: LIGHT;
                                               height: 50px;
-                                              position: fixed;
+                                              position: absolute;
                                               top: 190px;
                                               left: 36px;
                                               color: rgb(83, 83, 83);
@@ -302,112 +301,22 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Media query per dispositivi mobili */
-    @media only screen and (max-width: 600px) {
-      .custom-text {
-        font-size: 18px;
-        height: 30px;
-        top: 100px;
-        left: 20px;
-      }
-
-      .custom-image {
-        height: 400px;
-        width: 250px;
-        top: 600px;
-        left: 400px;
-      }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </head>
 <body>
+
+  <img id="custom-image" src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\PAGINE\DISPOSITIVI DISPONIBILI.png" alt="Immagine personalizzata">
+
+
+
+
+
+
+
+
+
+
   <div id="container">
     <div id="left-section">
 
@@ -462,59 +371,28 @@
 
     <!-- TESTI-->
 
-   
+  <div>      
 
               <div id="tutorial-text">DISPOSITIVI DISPONIBILI</div>
            <div class="preset-text">con funzione di RICEVITORE</div>
-
-
-
-
-           
-         
-           <div class="container">
-            <class="custom-image">
-              <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\PAGINE\DISPOSITIVI DISPONIBILI.png" alt="Descrizione immagine">
-   
-            </div> 
-              <!--TESTI CLASSI QUINDI SONO DENTRO  DENTRO LA PAGINA -->
-
-            </a>
-          
-
 
                     <a class="sotto-testo-text"> I dispositivi RRH sono dotati di un’etichetta laterale contenente le informazioni identificative del prodotto, compreso numero di serie. </a>
         
 
                     <a class="sotto-testo2-text"> Il dispositivo RRH9 è facilmente riconoscibile rispetto al dispositivo RRH8 per la colorazione rossa del tasto CONFIG.</a>
 
-                 
-     
-
-      
-      </a>
-          
 
 
+                  </div>      
+         
+  
           </div>       
 
 
 
           <!-- <a href="pagina_di_destinazione.html" class="Ricevitore e trasmettitore senza batteria-text"> Ricevitore e trasmettitore senza batteria</a>
 
-                       
-                              
-                              
-                       
-
-
-
-
-
-
-
-
-        
+     
 
         </div>
 
@@ -532,7 +410,27 @@ JAVA SCRIPT INIZIO-->
   <script>
 
       // JAVA SCRIPT
-   
+      function adjustImageSize() {
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+
+      var maxWidth = windowWidth - 50;
+      var maxHeight = windowHeight - 200;
+
+      var image = document.getElementById("custom-image");
+
+      image.style.maxWidth = maxWidth + "px";
+      image.style.maxHeight = maxHeight + "px";
+    }
+
+    // Chiamata iniziale per adattare le dimensioni dell'immagine quando la pagina viene caricata
+    window.addEventListener("load", adjustImageSize);
+
+    // Aggiungi un listener per il ridimensionamento della finestra
+    window.addEventListener("resize", adjustImageSize);
+
+
+    
   // BARRA DI RICERCA
 
                         function search() {

@@ -5,11 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
+
+
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f0f0f0;
+
+      
     }
+
+
+
+    .fade-out {
+     opacity: 0;
+}
+
+
+
 
     #banner {
       width: 700px;
@@ -81,7 +96,7 @@
 <body>
 
 <div id="banner">
-  <img id="logo" src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\comepi_srl_cover2.png" alt="Logo">
+  <img id="logo" src="c:\Users\edoardo.bonechi\Pictures\COMEPI_DEMO\COMEPIDEMO\IMMAGINI\comepi_srl_cover2.png" alt="Logo">
 
   <label for="code">USER</label>
   <input type="text" id="code" placeholder="Inserisci l'Username">
@@ -102,7 +117,7 @@
 
     if (codeInput === "COMEPI_USER" && passwordInput === "WEB-345-123") {
       // Credenziali corrette, reindirizzamento alla pagina successiva
-      window.location.href = "file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/1_index_COMEPI.html"; 
+      window.location.href = "file:///C:/Users/edoardo.bonechi/Pictures/COMEPI_DEMO/COMEPIDEMO/1_index_COMEPI.html"; 
     } else {
       // Credenziali errate, visualizza un messaggio di errore
       errorMessage.textContent = "Credenziali errate. Riprova.";
@@ -112,6 +127,36 @@
 
 
 
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Aggiungi un listener per il clic su un link
+    document.body.addEventListener('click', function (e) {
+      // Verifica se il clic è su un link
+      if (e.target.tagName === 'A' && e.target.getAttribute('href')) {
+        // Impedisci il comportamento predefinito del link
+        e.preventDefault();
+        
+        // Aggiungi la classe fade-out al body
+        document.body.classList.add('fade-out');
+
+        // Attendere il termine dell'animazione prima di navigare alla nuova pagina
+        setTimeout(function () {
+          // Naviga alla nuova pagina
+          window.location.href = e.target.getAttribute('href');
+        }, 500); // Imposta questo valore in millisecondi in base alla durata dell'animazione
+      }})
+    });
+
+
+
+
+
+document.body.addEventListener('transitionend', function () {
+      document.body.classList.remove('fade-out');
+    });
+  
+
+  
 
 
 

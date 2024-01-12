@@ -109,27 +109,7 @@
 
     /* BOTTONE Informazioni tecniche  CON ROLLOVER*/
 
-                            #prosegui-button {
-                            position: absolute;
-                            bottom: 130px; /* Distanza iniziale dal margine inferiore */
-                            right: 470px; /* Distanza iniziale dal margine destro */
-                            width: 270px;
-                            height: 53px; /* Altezza desiderata del bottone */
-                            background-color: rgba(255, 255, 255, 0);
-                            color: rgb(0, 0, 0);
-                            border: 2px solid black;
-                            border-radius: 10px;
-                            cursor: pointer;
-                            transition: background-color 0.5s ease, color 0.5s ease, width 0.5s ease, right 0.5s ease, bottom 0.5s ease, font-size 0.5s ease;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                          }
-
-                          #prosegui-button:hover {
-                            background-color: rgb(0, 0, 0);
-                            color: rgb(255, 255, 255);
-                          }
+                         
 
 
 
@@ -273,7 +253,7 @@
       font-size: 110px;
       height: 50px;
       position: absolute;
-      top: 250px;
+      top: 220px;
       right: 170px;
     }
 
@@ -442,7 +422,7 @@ color: rgb(114, 114, 114);
 
     <!-- BOTTONI-->
 
-               <div id="prosegui-button" onclick="navigateTopage()">INFORMAZIONI TECNICHE</div>
+        
                <div id="ISTRUZIONI-button" onclick="navigateToPage2()">ISTRUZIONI DI MONTAGGIO</div>
 
 
@@ -450,15 +430,15 @@ color: rgb(114, 114, 114);
     <!--ICONE -->
 
 
-              <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+              <img id="image-bottom-left" src="C:\Users\edoardo.bonechi\Pictures\COMEPI_DEMO\COMEPIDEMO\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
 
 
 
 
-              <a href="url_DEL LINK ">
-                <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon">
-            </a>
+           
+                <img id="home-icon-top-right" src="c:\Users\edoardo.bonechi\Pictures\COMEPI_DEMO\COMEPIDEMO\IMMAGINI\Risorsa 2.png" alt="Home Icon">
+      
 
               
 
@@ -480,7 +460,7 @@ color: rgb(114, 114, 114);
          
            <div class="container">
             <a  class="custom-image">
-              <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\MODELLI\sio rice.png" alt="Descrizione immagine">
+              <img src="c:\Users\edoardo.bonechi\Pictures\COMEPI_DEMO\COMEPIDEMO\IMMAGINI\MODELLI\sio rice - Copia.png" alt="Descrizione immagine">
 
 
               <!--TESTI CLASSI QUINDI STANNO DENTRO LA PAGINA -->
@@ -538,6 +518,78 @@ color: rgb(114, 114, 114);
   <script>
 
       // JAVA SCRIPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Funzione per regolare dimensioni e posizione dell'immagine "custom-image" in modo graduale
+
+
+// Funzione per regolare dimensioni e posizione dell'immagine "custom-image" in modo graduale
+// Funzione per regolare dimensioni e posizione dell'immagine "custom-image" in modo graduale
+// Funzione per regolare dimensioni e posizione dell'immagine "custom-image" in modo graduale
+function adjustCustomImage() {
+    var windowWidth = window.innerWidth;
+    var maxWidth = 1920; // Larghezza massima della pagina
+    var minWidth = 600;  // Larghezza minima della pagina
+    var baseWidth = 700; // Larghezza di base dell'immagine
+    var baseHeight = 700; // Altezza di base dell'immagine
+    var initialLeft = 700; // Posizione iniziale a sinistra in pixel
+    var initialTop = 150;  // Posizione iniziale in alto in pixel
+    var finalLeft = 50;   // Posizione finale a sinistra in pixel
+    var finalTop = 200;    // Posizione finale in alto in pixel
+    var widthMiddleFactor = 0.2; // Fattore di mezzo tra la dimensione iniziale e finale (0.5 significa dimensione intermedia)
+    var positionMiddleFactor = 0.8; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
+
+    // Calcola la percentuale della larghezza della pagina rispetto alla larghezza massima
+    var widthPercentage = windowWidth / maxWidth;
+
+    // Assicura che la percentuale di larghezza sia compresa tra 0 e 1
+    widthPercentage = Math.min(1, Math.max(0, widthPercentage));
+
+    // Calcola la percentuale di dimensione basata sul fattore di mezzo
+    var sizePercentage = 1 - (1 - widthMiddleFactor) * (1 - widthPercentage);
+
+    // Calcola la percentuale di posizione basata sul fattore di mezzo
+    var positionPercentage = 1 - (1 - positionMiddleFactor) * (1 - widthPercentage);
+
+    var customImage = document.querySelector(".custom-image");
+
+    // Calcola la nuova dimensione basata sulla percentuale di dimensione
+    var newWidth = sizePercentage * baseWidth;
+
+    // Calcola la nuova altezza mantenendo le proporzioni
+    var newHeight = (newWidth / baseWidth) * baseHeight;
+
+    // Calcola la nuova posizione basata sulla percentuale di posizione
+    var newLeft = (positionPercentage * (finalLeft - initialLeft)) + initialLeft;
+    var newTop = (positionPercentage * (finalTop - initialTop)) + initialTop;
+
+    // Applica le nuove dimensioni e posizione all'immagine
+    customImage.style.width = newWidth + "px";
+    customImage.style.height = newHeight + "px";
+    customImage.style.left = newLeft + "px";
+    customImage.style.top = newTop + "px";
+}
+
+// Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
+window.addEventListener("load", adjustCustomImage);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustCustomImage);
+
+
+
+
    
   // BARRA DI RICERCA
 
@@ -842,14 +894,14 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
                           function navigateTopage() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/INDICE.html";
+                            window.location.href ="file:///C:/Users/edoardo.bonechi/Pictures/COMEPI_DEMO/COMEPIDEMO/2_INDICE.html";
                           }
 
 
                           
                           function navigateToPage2() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/INDICE%20VIDEO.html";
+                            window.location.href ="file:///C:/Users/edoardo.bonechi/Pictures/COMEPI_DEMO/COMEPIDEMO/INDICE%20VIDEO.html";
                           }
   </script>
   
