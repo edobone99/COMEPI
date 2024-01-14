@@ -31,17 +31,57 @@
 
 
 
+                          #popup {
+                              position: fixed;
+                              width: 1000px;
+                              height: 700px;
+                              left: 50%;
+                              top: 50%;
+                              transform: translate(-50%, -50%);
+                              border-radius: 45px;
+                              overflow: hidden;
+                              background-color: rgb(255, 255, 255); /* Aggiunto sfondo bianco trasparente */
+                              box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                              display: none;
+                              animation: fadeOut 1s 4s forwards; /* Animazione fadeOut con ritardo di 4 secondi */
+                          }
 
-                            #INDICE-text {
-      font-family: 'Helvetica', sans-serif;
-      font-weight: bold;
-      font-size: 2vw; /* Utilizza una dimensione relativa in base alla larghezza della finestra */
-      height: 50px;
-      position: absolute;
-      top: 48px;
-      left: 255px;
-      color: rgba(83, 83, 83, 0.534);
-    }
+                          #popup img {
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                              border-radius: 45px; /* Aggiunto anche qui il bordo smussato */
+                          }
+
+                          /* Bottone "HO CAPITO" */
+                          #hoCapitoButton {
+                              width: 200px;
+                              height: 60px;
+                              background-color: black;
+                              color: white;
+                              font-size: 20px;
+                              font-weight: bold;
+                              border: 2px solid black;
+                              border-radius: 30px;
+                              cursor: pointer;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              position: absolute;
+                              bottom: 40px;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+                          }
+
+                          #hoCapitoButton:hover {
+                              background-color: white;
+                              color: black;
+                              border-color: black;
+                          }
+
+
+
 
 
 
@@ -127,10 +167,9 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                               height: 900px;
                               display: flex;
                               margin: 0 auto;
-                              position: static;
+                              position: relative;
                               display: flex;
                             }
-
 
                             
 
@@ -166,35 +205,84 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
     
 /* CATALOGO  */
-
-                            #download-icon {
-            position: absolute;
-            right: 700px;
-            bottom: 110px;
-            width: 22px;
-            height: 31px;
-            transition: all 0.5s ease-in-out;
+#download-icon {
+                              position: fixed;
+                              left: 690px;
+                              bottom: 110px;
+                              width: 22px;
+                              height: 31px;
+                            
+                              transition: all 0.5s ease-in-out;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 1500px) {
             #download-icon {
-                right: 200px;
-                bottom: 103px;
+              left: 660px;
+                bottom: 110px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
-        }
+
+            @media (max-width: 1304px) {
+            #download-icon {
+              left: 650px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1300px) {
+            #download-icon {
+              left: 625px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1200px) {
+            #download-icon {
+              left: 580px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+
+            @media (max-width: 1100px) {
+            #download-icon {
+              left: 520px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+          }
+          
+
+          }
+          
+          }
+          
+
+
+
+          }
+          
+      }
                                                                   
                                                                   
 /* TESTO CON ISTRUZIONI  */
 
                               #text-container {
-                                position: absolute;
+                                position: fixed;
                                 top: 245px;
                                 left: 678px;
                                 display: flex;
                                 flex-direction: column;
                                 gap: 15px;
+                                transition: all 0.5s ease-in-out;
                               }
 
                               .text {
@@ -202,8 +290,185 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                                 color: lightgray;
                                 cursor: pointer;
                                 transition: color 0.5s ease;
+                                transition: all 0.5s ease-in-out;
                               }
 
+
+
+
+
+
+
+                              @media (max-width: 1500px) {
+                              #text-container {
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #text-container {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #text-container {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #text-container  {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #text-container  {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+  /* TESTO: ISTRUZIONI */ 
+
+
+                              #ISTRUZIONI-text{
+
+                                  position: fixed;
+                                top: 150px;
+                                left: 678px;
+                                font-size: 35pt;
+                                font-weight: bold;
+                                transition: all 0.5s ease-in-out;
+
+                              }
+
+
+        @media (max-width: 1500px) {
+          #ISTRUZIONI-text{
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #ISTRUZIONI-text {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #ISTRUZIONI-text {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #ISTRUZIONI-text {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #ISTRUZIONI-text {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+  /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
+
+
+
+
+
+                              .preset-text {
+                              font-family: 'Helvetica', sans-serif;
+                              font-size: 35px;
+                              font-weight: bold;
+                              color: #cccccc; /* Colore grigio chiaro */
+                              position: absolute;
+                              top: 97px;
+                              left: 37px;
+                              transition: all 0.5s ease-in-out;
+                              }
+
+
+
+                              @media (max-width: 1500px) {
+                                .preset-text {
+                                  font-size: 35px;
+                            
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                .preset-text {
+                                  font-size: 34px;
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                .preset-text {
+                                  font-size: 33px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                .preset-text {
+                                  font-size: 32px;
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                .preset-text {
+                                  font-size: 31px;
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+
+                                                                  
 
 
     /* BOTTONE PROSEGUI  CON ROLLOVER*/
@@ -281,15 +546,6 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
     /* TESTO: ISTRUZIONI */ 
 
 
-                              #ISTRUZIONI-text{
-
-                                  position: absolute;
-                                top: 150px;
-                                left: 678px;
-                                font-size: 35pt;
-                                font-weight: bold;
-
-                              }
 
 
 
@@ -336,7 +592,6 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
   <div id="container">
     <div id="left-section">
 
-      <div id="INDICE-text" onclick="navigateToNextPage2()"> - INDICE</div>
 
 
 
@@ -419,7 +674,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
 
 
-              <a href="indice_COMEPI.html">
+              <a href="url_DEL LINK ">
                 <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
 
 
@@ -434,7 +689,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
     <!-- TESTI-->
 
-              <div class="preset-text">ACCENSIONE E PRESET DEL DISPOSITIVO</div>
+              <div class="preset-text">ACCENSIONE PRESET DEL DISPOSITIVO</div>
 
               <div id="tutorial-text">Tutorial</div>
 
@@ -453,7 +708,13 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                 
                   <!-- ... Altri elementi rimangono invariati ... -->
 
-                 
+                  <!-- Pop-up con immagine e bottone "HO CAPITO" -->
+                  <div id="popup">
+                      <img src="path_to_your_image.jpg" alt="Immagine">
+                      <div id="hoCapitoButton" onclick="closePopup()">HO CAPITO</div>
+                  </div>
+              </div>
+
 
 
 
@@ -589,13 +850,10 @@ if (event.key === 'Enter') {
 
 
 
- 
  function resizeVideoAndMask() {
     var videoContainer = document.getElementById("mask-container");
     var video = document.getElementById("video");
-    var textContainer = document.getElementById("text-container");
-    var istruzioniText = document.getElementById("ISTRUZIONI-text");
-
+ 
     // Imposta le dimensioni del video e della maschera in base alle dimensioni della finestra
     var windowWidth = window.innerWidth;
     var videoWidth = 604; // Larghezza originale del video
@@ -603,10 +861,10 @@ if (event.key === 'Enter') {
 
     // Definisci valori di espansione massima e minima
     var maxExpansion = 1; // Espansione massima
-    var minExpansion = 0.65; // Espansione minima
+    var minExpansion = 0.5; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
-    var newMaskWidth = Math.min(Math.max(windowWidth * 0.6, videoWidth * minExpansion), videoWidth * maxExpansion);
+    var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
 
     // Calcola la nuova altezza della maschera mantenendo le proporzioni originali del video
     var newMaskHeight = (newMaskWidth / videoWidth) * videoHeight;
@@ -617,21 +875,6 @@ if (event.key === 'Enter') {
     video.style.width = "100%";
     video.style.height = "100%";
 
-    // Verifica se la larghezza della finestra è inferiore a un certo valore
-    if (windowWidth < 768) {
-      // Se sì, sposta il textContainer e istruzioniText sotto la maschera
-      textContainer.style.top = newMaskHeight + 240 + "px";
-      textContainer.style.left = "36px";
-      textContainer.style.right = "36px";
-      istruzioniText.style.top = newMaskHeight + 175 + "px";
-      istruzioniText.style.left = "36px";
-    } else {
-      // Altrimenti, ripristina la posizione originale
-      textContainer.style.top = "245px";
-      textContainer.style.left = "678px";
-      istruzioniText.style.top = "150px";
-      istruzioniText.style.left = "678px";
-    }
   }
 
 
@@ -836,35 +1079,6 @@ window.addEventListener("resize", function () {
 
 //ISTRUZIONI MODIFICA FONT 
 
-
-
-// Funzione per aggiustare la dimensione del font di "ISTRUZIONI-text" in base alla larghezza della finestra
-function adjustIstruzioniTextFontSize() {
-    var windowWidth = window.innerWidth;
-    var minWindowSize = 768;
-
-    // Imposta la dimensione del font iniziale e la dimensione minima desiderata
-    var initialFontSize = 35;
-    var minFontSize = 18;
-
-    var istruzioniText = document.getElementById("ISTRUZIONI-text");
-
-    // Se la larghezza della finestra è inferiore alla dimensione minima
-    if (windowWidth < minWindowSize) {
-        // Calcola la nuova dimensione del font in base alla larghezza della finestra
-        var newFontSize = Math.max(minFontSize, initialFontSize * (windowWidth / minWindowSize));
-        istruzioniText.style.fontSize = newFontSize + "pt";
-    } else {
-        // Ripristina la dimensione del font iniziale
-        istruzioniText.style.fontSize = initialFontSize + "pt";
-    }
-}
-
-// Chiamata iniziale per adattare la dimensione del font quando la pagina viene caricata
-window.addEventListener("load", adjustIstruzioniTextFontSize);
-
-// Aggiungi un listener per il ridimensionamento della finestra
-window.addEventListener("resize", adjustIstruzioniTextFontSize);
 
 
 
@@ -1118,13 +1332,7 @@ function closePopup() {
 
                           function navigateToNextPage() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="12_impostazione%20dei%20trasmettitori%20wireless.html";
-                          }
-
-                          
-                          function navigateToNextPage2() {
-                            // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="INDICE%20VIDEO.html";
+                            window.location.href ="9_impostazione%20dei%20trasmettitori%20wireless.html";
                           }
   </script>
 </body>
