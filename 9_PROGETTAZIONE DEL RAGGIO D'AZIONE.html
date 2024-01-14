@@ -203,37 +203,98 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                             }
 
 
+
+
+
+
+
+
+
+
+
+
+
     
 /* CATALOGO  */
 
                             #download-icon {
-            position: fixed;
-            left: 650px;
-            bottom: 110px;
-            width: 22px;
-            height: 31px;
-            transition: all 0.5s ease-in-out;
+                              position: fixed;
+                              left: 690px;
+                              bottom: 110px;
+                              width: 22px;
+                              height: 31px;
+                            
+                              transition: all 0.5s ease-in-out;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 1500px) {
             #download-icon {
-                right: 200px;
-                bottom: 103px;
+              left: 660px;
+                bottom: 110px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
-        }
+
+            @media (max-width: 1304px) {
+            #download-icon {
+              left: 650px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1300px) {
+            #download-icon {
+              left: 625px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1200px) {
+            #download-icon {
+              left: 580px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+
+            @media (max-width: 1100px) {
+            #download-icon {
+              left: 520px;
+                bottom: 110px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+          }
+          
+
+          }
+          
+          }
+          
+
+
+
+          }
+          
+      }
                                                                   
                                                                   
 /* TESTO CON ISTRUZIONI  */
 
                               #text-container {
-                                position: absolute;
+                                position: fixed;
                                 top: 245px;
                                 left: 678px;
                                 display: flex;
                                 flex-direction: column;
                                 gap: 15px;
+                                transition: all 0.5s ease-in-out;
                               }
 
                               .text {
@@ -241,7 +302,189 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                                 color: lightgray;
                                 cursor: pointer;
                                 transition: color 0.5s ease;
+                                transition: all 0.5s ease-in-out;
                               }
+
+
+
+
+
+
+
+                              @media (max-width: 1500px) {
+                              #text-container {
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #text-container {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #text-container {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #text-container  {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #text-container  {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+  /* TESTO: ISTRUZIONI */ 
+
+
+                              #ISTRUZIONI-text{
+
+                                  position: fixed;
+                                top: 150px;
+                                left: 678px;
+                                font-size: 35pt;
+                                font-weight: bold;
+                                transition: all 0.5s ease-in-out;
+
+                              }
+
+
+        @media (max-width: 1500px) {
+          #ISTRUZIONI-text{
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #ISTRUZIONI-text {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #ISTRUZIONI-text {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #ISTRUZIONI-text {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #ISTRUZIONI-text {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+  /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
+
+
+
+
+
+                              .preset-text {
+                              font-family: 'Helvetica', sans-serif;
+                              font-size: 35px;
+                              font-weight: bold;
+                              color: #cccccc; /* Colore grigio chiaro */
+                              position: absolute;
+                              top: 97px;
+                              left: 37px;
+                              transition: all 0.5s ease-in-out;
+                              }
+
+
+
+                              @media (max-width: 1500px) {
+                                .preset-text {
+                                  font-size: 35px;
+                            
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                .preset-text {
+                                  font-size: 34px;
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                .preset-text {
+                                  font-size: 33px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                .preset-text {
+                                  font-size: 32px;
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                .preset-text {
+                                  font-size: 31px;
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -317,18 +560,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                               
 
 
-    /* TESTO: ISTRUZIONI */ 
-
-
-                              #ISTRUZIONI-text{
-
-                                  position: absolute;
-                                top: 150px;
-                                left: 678px;
-                                font-size: 35pt;
-                                font-weight: bold;
-
-                              }
+  
 
 
 
@@ -346,21 +578,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
 
 
-
-
-    /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
-
-
-
-                              .preset-text {
-                              font-family: 'Helvetica', sans-serif;
-                              font-size: 30px;
-                              font-weight: bold;
-                              color: #cccccc; /* Colore grigio chiaro */
-                              position: absolute;
-                              top: 97px;
-                              left: 37px;
-                              }
+  
 
 
 
@@ -641,9 +859,7 @@ if (event.key === 'Enter') {
  function resizeVideoAndMask() {
     var videoContainer = document.getElementById("mask-container");
     var video = document.getElementById("video");
-    var textContainer = document.getElementById("text-container");
-    var istruzioniText = document.getElementById("ISTRUZIONI-text");
-
+ 
     // Imposta le dimensioni del video e della maschera in base alle dimensioni della finestra
     var windowWidth = window.innerWidth;
     var videoWidth = 604; // Larghezza originale del video
@@ -666,37 +882,10 @@ if (event.key === 'Enter') {
     video.style.height = "100%";
 
 
-    // Verifica se la larghezza della finestra è inferiore a un certo valore
-    if (windowWidth < 1400) {
-      // Se sì, sposta il textContainer e istruzioniText sotto la maschera
-    
-      textContainer.style.left = "600px";
-      textContainer.style.right = "70px";
-     
-      istruzioniText.style.left = "600px";
-    } else {
-      // Altrimenti, ripristina la posizione originale
-      textContainer.style.top = "245px";
-      textContainer.style.left = "700px";
-      istruzioniText.style.top = "150px";
-      istruzioniText.style.left = "678px";
-    }
 
-    // Verifica se la larghezza della finestra è inferiore a un certo valore
-    if (windowWidth < 1300) {
-      // Se sì, sposta il textContainer e istruzioniText sotto la maschera
-    
-      textContainer.style.left = "600px";
-      textContainer.style.right = "70px";
-     
-      istruzioniText.style.left = "600px";
-    } else {
-      // Altrimenti, ripristina la posizione originale
-      textContainer.style.top = "245px";
-      textContainer.style.left = "678px";
-      istruzioniText.style.top = "150px";
-      istruzioniText.style.left = "678px";
-    }
+
+   ///cancellare ////
+
 
 
   }
@@ -850,95 +1039,12 @@ if (event.key === 'Enter') {
 
 
 
-  function adjustTextProperties() {
-    var windowWidth = window.innerWidth;
-
-    // Definisci la dimensione minima della finestra per applicare le modifiche
-    var minWindowSize = 768;
-
-    // Imposta le proprietà iniziali e finali per le scritte
-
-
-       //TUTORIAL
-    var initialFontSizeTutorial = 42;
-    var finalFontSizeTutorial = 25;
-    var initialTopTutorial = 36;
-    var finalTopTutorial = 80;
-
-    //CAPITOLO
-
-    var initialFontSizePreset = 30;
-    var finalFontSizePreset = 18;
-    var initialTopPreset = 97;
-    var finalTopPreset = 120;
-
-    var textTutorial = document.getElementById("tutorial-text");
-    var textPreset = document.querySelector(".preset-text");
-
-    // Se la larghezza della finestra è inferiore alla dimensione minima
-    if (windowWidth < minWindowSize) {
-        // Aggiorna le proprietà delle scritte
-        textTutorial.style.fontSize = finalFontSizeTutorial + "pt";
-        textTutorial.style.top = finalTopTutorial + "px";
-
-        textPreset.style.fontSize = finalFontSizePreset + "pt";
-        textPreset.style.top = finalTopPreset + "px";
-    } else {
-        // Ripristina le proprietà originali delle scritte
-        textTutorial.style.fontSize = initialFontSizeTutorial + "pt";
-        textTutorial.style.top = initialTopTutorial + "px";
-
-        textPreset.style.fontSize = initialFontSizePreset + "pt";
-        textPreset.style.top = initialTopPreset + "px";
-    }
-}
-
-// Chiamata iniziale per adattare le proprietà delle scritte quando la pagina viene caricata
-window.addEventListener("load", function () {
-    adjustTextProperties();
-});
-
-// Aggiungi un listener per il ridimensionamento della finestra
-window.addEventListener("resize", function () {
-    adjustTextProperties();
-});
 
 
 
 
 
 //ISTRUZIONI MODIFICA FONT 
-
-
-
-// Funzione per aggiustare la dimensione del font di "ISTRUZIONI-text" in base alla larghezza della finestra
-function adjustIstruzioniTextFontSize() {
-    var windowWidth = window.innerWidth;
-    var minWindowSize = 768;
-
-    // Imposta la dimensione del font iniziale e la dimensione minima desiderata
-    var initialFontSize = 35;
-    var minFontSize = 18;
-
-    var istruzioniText = document.getElementById("ISTRUZIONI-text");
-
-    // Se la larghezza della finestra è inferiore alla dimensione minima
-    if (windowWidth < minWindowSize) {
-        // Calcola la nuova dimensione del font in base alla larghezza della finestra
-        var newFontSize = Math.max(minFontSize, initialFontSize * (windowWidth / minWindowSize));
-        istruzioniText.style.fontSize = newFontSize + "pt";
-    } else {
-        // Ripristina la dimensione del font iniziale
-        istruzioniText.style.fontSize = initialFontSize + "pt";
-    }
-}
-
-// Chiamata iniziale per adattare la dimensione del font quando la pagina viene caricata
-window.addEventListener("load", adjustIstruzioniTextFontSize);
-
-// Aggiungi un listener per il ridimensionamento della finestra
-window.addEventListener("resize", adjustIstruzioniTextFontSize);
-
 
 
 
