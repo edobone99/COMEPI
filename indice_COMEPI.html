@@ -109,7 +109,27 @@
 
     /* BOTTONE Informazioni tecniche  CON ROLLOVER*/
 
-                         
+                            #prosegui-button {
+                            position: absolute;
+                            bottom: 130px; /* Distanza iniziale dal margine inferiore */
+                            right: 400px; /* Distanza iniziale dal margine destro */
+                            width: 270px;
+                            height: 53px; /* Altezza desiderata del bottone */
+                            background-color: rgba(255, 255, 255, 0);
+                            color: rgb(0, 0, 0);
+                            border: 2px solid black;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            transition: background-color 0.5s ease, color 0.5s ease, width 0.5s ease, right 0.5s ease, bottom 0.5s ease, font-size 0.5s ease;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+
+                          #prosegui-button:hover {
+                            background-color: rgb(0, 0, 0);
+                            color: rgb(255, 255, 255);
+                          }
 
 
 
@@ -128,7 +148,7 @@
                            #ISTRUZIONI-button {
                             position: absolute;
                             bottom: 130px; /* Distanza iniziale dal margine inferiore */
-                            right: 170px; /* Distanza iniziale dal margine destro */
+                            right: 100px; /* Distanza iniziale dal margine destro */
                             width: 270px;
                             height: 53px; /* Altezza desiderata del bottone */
                             background-color: rgba(255, 255, 255, 0);
@@ -253,11 +273,19 @@
       font-size: 110px;
       height: 50px;
       position: absolute;
-      top: 220px;
-      right: 170px;
+      top: 250px;
+      right: 100px;
     }
 
-
+    @media only screen and (max-width: 1800px){
+      .Wireless-text{
+                                top: 250px;
+                              
+                              }
+                   
+                            }
+                                  
+            
 
     .Ricevitore-text {
 
@@ -267,8 +295,20 @@
       height: 50px;
       position: absolute;
       top: 345px;
-      right: 170px;
+      right: 100px;
     }
+    
+
+    @media only screen and (max-width: 1400px){
+      .Ricevitore-text{
+                                top: 285px;
+                              
+                              }
+                   
+
+                                  
+                                
+              }
 
 
 
@@ -280,7 +320,7 @@ font-size: 50px;
 height: 50px;
 position: absolute;
 top: 500px;
-right: 170px;
+right: 100px;
 color: rgb(114, 114, 114);
 }
 
@@ -295,9 +335,19 @@ color: rgb(114, 114, 114);
     height: 50px;
     position:absolute;
     top: 600px;
-    right: 170px;
+    right: 100px;
     color: rgb(114, 114, 114);
+
     }
+
+
+  
+
+
+
+
+
+
 
     .custom-image {
       height: 700px;
@@ -422,7 +472,7 @@ color: rgb(114, 114, 114);
 
     <!-- BOTTONI-->
 
-        
+               <div id="prosegui-button" onclick="navigateTopage()">INFORMAZIONI TECNICHE</div>
                <div id="ISTRUZIONI-button" onclick="navigateToPage2()">ISTRUZIONI DI MONTAGGIO</div>
 
 
@@ -430,14 +480,14 @@ color: rgb(114, 114, 114);
     <!--ICONE -->
 
 
-              <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+              <img id="image-bottom-left" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
 
 
 
 
            
-                <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
+                <img id="home-icon-top-right" src="C:\Users\edoar\Videos\COMEPI WEB PAGINA INTERATTIVA\IMMAGINI\Risorsa 2.png" alt="Home Icon">
       
 
               
@@ -460,7 +510,7 @@ color: rgb(114, 114, 114);
          
            <div class="container">
             <a  class="custom-image">
-              <img src="IMMAGINI\MODELLI\sio rice - Copia.png" alt="Descrizione immagine">
+              <img src="C:\Users\edoar\Videos\COMEPI-GITHUB\COMEPI\IMMAGINI\MODELLI\sio rice.png" alt="Descrizione immagine">
 
 
               <!--TESTI CLASSI QUINDI STANNO DENTRO LA PAGINA -->
@@ -517,7 +567,187 @@ color: rgb(114, 114, 114);
 
   <script>
 
-      // JAVA SCRIPT
+   
+
+
+
+
+
+
+
+   // TESTO WIRELESS
+
+
+   function adjustCustomText2() {
+    var windowWidth = window.innerWidth;
+    var maxWidth = 1800; // Larghezza massima della finestra
+    var minWidth = 1400; // Larghezza minima della finestra
+    var initialTop = 100;  // Distanza iniziale dall'alto in pixel
+    var finalTop = 200;    // Distanza finale dall'alto in pixel
+    var positionMiddleFactor = 0.5; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
+
+    // Verifica che la larghezza della finestra sia compresa tra minWidth e maxWidth
+    var withinRange = Math.min(maxWidth, Math.max(minWidth, windowWidth));
+
+    // Calcola la percentuale della larghezza della finestra rispetto alla larghezza massima
+    var widthPercentage = (withinRange - minWidth) / (maxWidth - minWidth);
+
+    // Calcola la percentuale di posizione basata sul fattore di mezzo
+    var positionPercentage = 1 - (1 - positionMiddleFactor) * (1 - widthPercentage);
+
+    var customText = document.querySelector(".Wireless-text");
+
+    // Calcola la nuova posizione basata sulla percentuale di posizione
+    var newTop = (positionPercentage * (finalTop - initialTop)) + initialTop;
+
+    // Applica la nuova posizione al testo
+    customText.style.top = newTop + "px";
+}
+
+// Chiamata iniziale per adattare la posizione del testo quando la pagina viene caricata
+window.addEventListener("load", adjustCustomText2);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustCustomText2);
+
+
+
+
+   // TESTO RICEVITORE
+
+
+      function adjustCustomText() {
+    var windowWidth = window.innerWidth;
+    var maxWidth = 1800; // Larghezza massima della finestra
+    var minWidth = 1400; // Larghezza minima della finestra
+    var initialTop = 90;  // Distanza iniziale dall'alto in pixel
+    var finalTop = 300;    // Distanza finale dall'alto in pixel
+    var positionMiddleFactor = 0.7; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
+
+    // Verifica che la larghezza della finestra sia compresa tra minWidth e maxWidth
+    var withinRange = Math.min(maxWidth, Math.max(minWidth, windowWidth));
+
+    // Calcola la percentuale della larghezza della finestra rispetto alla larghezza massima
+    var widthPercentage = (withinRange - minWidth) / (maxWidth - minWidth);
+
+    // Calcola la percentuale di posizione basata sul fattore di mezzo
+    var positionPercentage = 1 - (1 - positionMiddleFactor) * (1 - widthPercentage);
+
+    var customText = document.querySelector(".Ricevitore-text");
+
+    // Calcola la nuova posizione basata sulla percentuale di posizione
+    var newTop = (positionPercentage * (finalTop - initialTop)) + initialTop;
+
+    // Applica la nuova posizione al testo
+    customText.style.top = newTop + "px";
+}
+
+// Chiamata iniziale per adattare la posizione del testo quando la pagina viene caricata
+window.addEventListener("load", adjustCustomText);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustCustomText);
+
+
+
+
+
+
+   // RRH8
+
+
+   function adjustCustomText3() {
+    var windowWidth = window.innerWidth;
+    var maxWidth = 1800; // Larghezza massima della finestra
+    var minWidth = 1400; // Larghezza minima della finestra
+    var initialTop = 100;  // Distanza iniziale dall'alto in pixel
+    var finalTop = 420;    // Distanza finale dall'alto in pixel
+    var positionMiddleFactor = 0.7; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
+
+    // Verifica che la larghezza della finestra sia compresa tra minWidth e maxWidth
+    var withinRange = Math.min(maxWidth, Math.max(minWidth, windowWidth));
+
+    // Calcola la percentuale della larghezza della finestra rispetto alla larghezza massima
+    var widthPercentage = (withinRange - minWidth) / (maxWidth - minWidth);
+
+    // Calcola la percentuale di posizione basata sul fattore di mezzo
+    var positionPercentage = 1 - (1 - positionMiddleFactor) * (1 - widthPercentage);
+
+    var customText = document.querySelector(".RRH8-RFH8-text");
+
+    // Calcola la nuova posizione basata sulla percentuale di posizione
+    var newTop = (positionPercentage * (finalTop - initialTop)) + initialTop;
+
+    // Applica la nuova posizione al testo
+    customText.style.top = newTop + "px";
+}
+
+// Chiamata iniziale per adattare la posizione del testo quando la pagina viene caricata
+window.addEventListener("load", adjustCustomText3);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustCustomText3);
+
+
+
+  // RFH9
+
+
+  function adjustCustomText4() {
+    var windowWidth = window.innerWidth;
+    var maxWidth = 1800; // Larghezza massima della finestra
+    var minWidth = 1400; // Larghezza minima della finestra
+    var initialTop = 150;  // Distanza iniziale dall'alto in pixel
+    var finalTop = 500;    // Distanza finale dall'alto in pixel
+    var positionMiddleFactor = 0.7; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
+
+    // Verifica che la larghezza della finestra sia compresa tra minWidth e maxWidth
+    var withinRange = Math.min(maxWidth, Math.max(minWidth, windowWidth));
+
+    // Calcola la percentuale della larghezza della finestra rispetto alla larghezza massima
+    var widthPercentage = (withinRange - minWidth) / (maxWidth - minWidth);
+
+    // Calcola la percentuale di posizione basata sul fattore di mezzo
+    var positionPercentage = 1 - (1 - positionMiddleFactor) * (1 - widthPercentage);
+
+    var customText = document.querySelector(".RRH9-RFH9-text ");
+
+    // Calcola la nuova posizione basata sulla percentuale di posizione
+    var newTop = (positionPercentage * (finalTop - initialTop)) + initialTop;
+
+    // Applica la nuova posizione al testo
+    customText.style.top = newTop + "px";
+}
+
+// Chiamata iniziale per adattare la posizione del testo quando la pagina viene caricata
+window.addEventListener("load", adjustCustomText4);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustCustomText4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -539,14 +769,14 @@ color: rgb(114, 114, 114);
 // Funzione per regolare dimensioni e posizione dell'immagine "custom-image" in modo graduale
 function adjustCustomImage() {
     var windowWidth = window.innerWidth;
-    var maxWidth = 1920; // Larghezza massima della pagina
-    var minWidth = 600;  // Larghezza minima della pagina
+    var maxWidth = 1800; // Larghezza massima della pagina
+    var minWidth = 1200;  // Larghezza minima della pagina
     var baseWidth = 700; // Larghezza di base dell'immagine
     var baseHeight = 700; // Altezza di base dell'immagine
-    var initialLeft = 700; // Posizione iniziale a sinistra in pixel
-    var initialTop = 150;  // Posizione iniziale in alto in pixel
-    var finalLeft = 50;   // Posizione finale a sinistra in pixel
-    var finalTop = 200;    // Posizione finale in alto in pixel
+    var initialLeft = -3500; // Posizione iniziale a sinistra in pixel
+    var initialTop = 400;  // Posizione iniziale in alto in pixel
+    var finalLeft = 250;   // Posizione finale a sinistra in pixel
+    var finalTop = 70;    // Posizione finale in alto in pixel
     var widthMiddleFactor = 0.2; // Fattore di mezzo tra la dimensione iniziale e finale (0.5 significa dimensione intermedia)
     var positionMiddleFactor = 0.8; // Fattore di mezzo tra la posizione iniziale e finale (0.5 significa posizione intermedia)
 
@@ -894,14 +1124,14 @@ window.addEventListener("resize", adjustHomeIconTopRight);
 
                           function navigateTopage() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="2_INDICE.html";
+                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/2_INDICE.html";
                           }
 
 
                           
                           function navigateToPage2() {
                             // Inserisci qui il collegamento alla tua pagina successiva
-                            window.location.href ="INDICE%20VIDEO.html";
+                            window.location.href ="file:///C:/Users/edoar/Videos/COMEPI-GITHUB/COMEPI/INDICE%20VIDEO.html";
                           }
   </script>
   
