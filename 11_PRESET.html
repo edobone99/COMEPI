@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMEPI Preset del dispositivo</title>
+  <style>
+
+/* SFONDO */
+
+                            body {
+                              margin: 0;
+                              padding: 0;
+                              font-family: 'Helvetica Neue Light', sans-serif;
+                              background-image: url ("IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
+                              background-size: cover;
+                              background-position: center;
+                     
+
+                            }
+
+
+
+
+                            /* Aggiungi questi stili per il pop-up */
+
+
+
+
+
+
+
+                          #popup {
+                              position: fixed;
+                              width: 900px;
+                              height: 600px;
+                              left: 50%;
+                              top: 50%;
+                              transform: translate(-50%, -50%);
+                              border-radius: 45px;
+                              overflow: hidden;
+                              background-color: rgb(255, 255, 255); /* Aggiunto sfondo bianco trasparente */
+                              box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                              display: none;
+                              animation: fadeOut 1s 4s forwards; /* Animazione fadeOut con ritardo di 4 secondi */
+                          }
+
+                          #popup img {
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                              border-radius: 45px; /* Aggiunto anche qui il bordo smussato */
+                          }
+
+                          /* Bottone "HO CAPITO" */
+                          #hoCapitoButton {
+                              width: 200px;
+                              height: 60px;
+                              background-color: black;
+                              color: white;
+                              font-size: 20px;
+                              font-weight: bold;
+                              border: 2px solid black;
+                              border-radius: 30px;
+                              cursor: pointer;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              position: absolute;
+                              bottom: 40px;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+                          }
+
+                          #hoCapitoButton:hover {
+                              background-color: white;
+                              color: black;
+                              border-color: black;
+                          }
+
+
+
+
+
+
+
+
+/* BARRA DI RICERCA */
+
+
+
+  
+
+
+
+.search-bar {
+
+width: 200px;
+
+height: 30px;
+
+position: absolute;
+
+top: 36px;
+
+right: 150px;
+
+}
+
+
+
+
+
+
+  /* Stili per i risultati della ricerca */
+
+
+
+
+
+  #searchResults {
+
+    display: none;
+
+    background-color: black;
+
+    color: white;
+
+    position: absolute;
+
+    width: 50%;
+
+    top: 40px;
+
+   right: 20px; 
+
+    z-index: 1;
+
+
+
+overflow-y: auto;
+
+width: fit-content; /* Larghezza dinamica in base al contenuto */
+
+
+
+  }
+
+
+
+
+
+
+
+
+/* BARRA DI RICERCA FINE  */
+
+
+
+/* CONTENITORE PAGINA */
+
+#container {
+                              max-width: 1920px;
+                              width: 100%;
+                              height: 900px;
+                              display: flex;
+                              margin: 0 auto;
+                              position: relative;
+                              display: flex;
+                            }
+
+                            
+
+/* VIDEO CON MASCHERA  */
+
+
+                            #left-section {
+                              position: relative;
+                              flex: 1;
+                              display: flex;
+                            }
+
+                            #mask-container {
+                              position: absolute;
+                              top: 151px;
+                              left: 44px;
+                              width: 604px;
+                              height: 548.625px;
+                              border-radius: 30px;
+                              overflow: hidden;
+                              box-shadow: 0 0 20px rgba(119, 119, 119, 0.253);
+                              display: flex;
+                              scale: flex;
+                              flex: 1;
+                            }
+
+                            #video {
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+
+
+    
+/* CATALOGO  */
+#download-icon {
+                              position: fixed;
+                              left: 690px;
+                              bottom: 70px;
+                              width: 22px;
+                              height: 31px;
+                            
+                              transition: all 0.5s ease-in-out;
+        }
+
+        @media (max-width: 1500px) {
+            #download-icon {
+              left: 660px;
+                bottom: 70px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1304px) {
+            #download-icon {
+              left: 650px;
+                bottom: 70px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1300px) {
+            #download-icon {
+              left: 625px;
+                bottom: 70px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+            @media (max-width: 1200px) {
+            #download-icon {
+              left: 580px;
+                bottom: 70px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+
+            @media (max-width: 1100px) {
+            #download-icon {
+              left: 520px;
+                bottom: 70px;
+                width: 15px; /* Ridimensiona del 30% rispetto all'originale */
+                height: 22px; /* Ridimensiona del 30% rispetto all'originale */
+            }
+
+
+          }
+          
+
+          }
+          
+          }
+          
+
+
+
+          }
+          
+      }
+                                                                  
+                                                                  
+/* TESTO CON ISTRUZIONI  */
+
+                              #text-container {
+                                position: absolute;
+                                top: 245px;
+                                left: 678px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 15px;
+                                transition: all 0.5s ease-in-out;
+                              }
+
+                              .text {
+                                font-size: 13pt;
+                                color: lightgray;
+                                cursor: pointer;
+                                transition: color 0.5s ease;
+                                transition: all 0.5s ease-in-out;
+                              }
+
+
+
+
+
+
+
+                              @media (max-width: 1500px) {
+                              #text-container {
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #text-container {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #text-container {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #text-container  {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #text-container  {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+  /* TESTO: ISTRUZIONI */ 
+
+
+                              #ISTRUZIONI-text{
+
+                                  position: absolute;
+                                top: 150px;
+                                left: 678px;
+                                font-size: 35pt;
+                                font-weight: bold;
+                                transition: all 0.5s ease-in-out;
+
+                              }
+
+
+        @media (max-width: 1500px) {
+          #ISTRUZIONI-text{
+                                left: 660px;
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                #ISTRUZIONI-text {
+                                left: 645px;
+                                
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                #ISTRUZIONI-text {
+                                left: 625px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                #ISTRUZIONI-text {
+                                left: 580px;
+                              
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                #ISTRUZIONI-text {
+                                left: 520px;
+                                
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+  /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
+
+
+
+
+
+                              .preset-text {
+                              font-family: 'Helvetica', sans-serif;
+                              font-size: 35px;
+                              font-weight: bold;
+                              color: #cccccc; /* Colore grigio chiaro */
+                              position: absolute;
+                              top: 97px;
+                              left: 37px;
+                              transition: all 0.5s ease-in-out;
+                              }
+
+
+
+                              @media (max-width: 1500px) {
+                                .preset-text {
+                                  font-size: 35px;
+                            
+                              
+                              }
+                              @media (max-width: 1304px) {
+                                .preset-text {
+                                  font-size: 34px;
+                                
+                              }
+
+                              @media (max-width: 1300px) {
+                                .preset-text {
+                                  font-size: 33px;
+                              
+                        
+                              }
+
+                              @media (max-width: 1200px) {
+                                .preset-text {
+                                  font-size: 32px;
+                              }
+
+
+
+                              @media (max-width: 1100px) {
+                                .preset-text {
+                                  font-size: 31px;
+              }
+             }
+
+            }
+
+           }
+
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+
+                                                                  
+
+
+    /* BOTTONE PROSEGUI  CON ROLLOVER*/
+
+                            #prosegui-button {
+                            position: fixed;
+                            bottom: 50px; /* Distanza iniziale dal margine inferiore */
+                            right: 36px; /* Distanza iniziale dal margine destro */
+                            width: 136px;
+                            height: 53px; /* Altezza desiderata del bottone */
+                            background-color: black;
+                            color: white;
+                            border: 2px solid black;
+                            border-radius: 40px;
+                            cursor: pointer;
+                            transition: background-color 0.5s ease, color 0.5s ease, width 0.5s ease, right 0.5s ease, bottom 0.5s ease, font-size 0.5s ease;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+
+                          #prosegui-button:hover {
+                            background-color: white;
+                            color: black;
+                          }
+
+    /* 
+
+
+                              #image-bottom-left {
+                                position: fixed;
+                                bottom: 36px;
+                                left: 36px;
+                                width: 180px;
+                                height: 30px;
+                              }
+    
+COMEPI*/
+    /* ICONA CASA*/
+
+
+
+                              #home-icon-top-right {
+                                position: absolute;
+                                top: 36px;
+                                right: 36px;
+                                width: 30px;
+                                height: 30px;
+                              }
+
+
+
+
+                              
+                            
+
+
+
+
+
+
+    /* TESTO: TUTORIAL */
+
+                              #tutorial-text {
+                                position: absolute;
+                                top: 36px;
+                                left: 36px;
+                                font-size: 42pt;
+                                font-weight: bold;
+                              }
+
+                              
+
+
+    /* TESTO: ISTRUZIONI */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* TESTO: TITOLO DEL CAPITOLO, TITOLO VIDEO, SOTTO TITOLO TUTORIAL */ 
+
+
+
+                              .preset-text {
+                              font-family: 'Helvetica', sans-serif;
+                              font-size: 30px;
+                              font-weight: bold;
+                              color: #cccccc; /* Colore grigio chiaro */
+                              position: absolute;
+                              top: 97px;
+                              left: 37px;
+                              }
+
+
+
+ </style>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div id="left-section">
+
+
+
+
+
+
+            <!-- Aggiungi il link con l'immagine -->
+
+
+
+
+
+
+
+
+
+      <div id="mask-container">
+        <video id="video" controls autoplay playsinline disablePictureInPicture>
+          <!-- Inserisci qui il percorso del tuo video -->
+          <source src="2-PROCEDURA DI ACCENSIONE2.mp4" type="video/mp4">
+          Il tuo browser non supporta il tag video.
+        </video>
+
+
+
+      </div>
+
+
+
+
+
+      <div id="text-container">
+        <div class="text" onclick="seekTo(2)">1.Fornire l’alimentazione alla scheda.</div>
+        <div class="text" onclick="seekTo(4)">3.Utilizzare solamente alimentazione proveniente da alimentatore 24Vdc conforme alle
+Direttive di riferimento. Non connettere direttamente alla rete elettrica di distribuzione.</div>
+  
+        <div class="text" onclick="seekTo(6)">2. Tensione di alimentazione: 24Vdc (-15% … +10%)</div>
+        <div class="text" onclick="seekTo(14)">4. All’accensione si accendono i led CH1 – CH2 – CH3 – CH4</div>
+
+  
+      <div id="ISTRUZIONI-text">ISTRUZIONI</div>
+
+
+                                                                  
+
+    </div>
+      
+      <a id="download-link" href="http://www.comepi.eu/wp-content/uploads/2020/05/010-ISTR-03-FC-1019-00-wirelessbatteryless-ITA.pdf" target="_blank" download>
+        <img id="download-icon" src="IMMAGINI\catalogo.png" alt="Download PDF">
+      </a>
+
+    
+    <!-- BARRA DI RICERCA-->
+
+              <div class="search-container">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Cerca...">
+
+                <div id="searchResults">
+              
+                  <ul id="resultsList"></ul>
+              
+                </div>
+              </div>
+              
+    
+
+
+
+
+    <!-- BOTTONI-->
+
+               <div id="prosegui-button" onclick="navigateToNextPage()">PROSEGUI</div>
+
+
+
+    <!--
+
+              <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
+ICONE -->
+
+
+
+
+
+              <a href="INDICE%20VIDEO.html">
+                <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
+
+
+
+            </a>
+
+              
+
+              
+    
+
+
+    <!-- TESTI-->
+
+              <div class="preset-text">ACCENSIONE DEL DISPOSITIVO</div>
+
+              <div id="tutorial-text">Tutorial</div>
+
+
+
+  </div>
+
+
+<!-- 
+
+
+              <div id="backgroundRectangle"></div>
+
+              <div id="container">
+Rettangolo di sfondo con effetto blur -->
+                
+                  <!-- ... Altri elementi rimangono invariati ... -->
+
+                  <!-- 
+                  <div id="popup">
+                      <img src="path_to_your_image.jpg" alt="Immagine">
+                      <div id="hoCapitoButton" onclick="closePopup()">HO CAPITO</div>
+                  </div>
+              </div>
+Pop-up con immagine e bottone "HO CAPITO" -->
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JAVA SCRIPT INIZIO-->
+
+
+
+  <script>
+
+      // JAVA SCRIPT
+   
+  // BARRA DI RICERCA
+
+  document.getElementById("searchInput").addEventListener("keyup", function(event) {
+
+if (event.key === 'Enter') {
+
+  var filter = document.getElementById('searchInput').value.toUpperCase();
+
+  var resultsList = document.getElementById('resultsList');
+
+  var resultsCount = 0;
+
+
+
+  var elementsToSearch = document.querySelectorAll('   #tutorial-text,#ISTRUZIONI-text,#home-icon-top-right,#image-bottom-left,.preset-text,.text,#text-container '); // Aggiungi qui tutte le classi in cui desideri cercare
+
+
+
+  resultsList.innerHTML = '';
+
+
+
+  elementsToSearch.forEach(function(element, index) {
+
+    if (resultsCount < 4 && element.textContent.toUpperCase().includes(filter)) {
+
+      var result = document.createElement('li');
+
+      result.textContent = element.textContent;
+
+      result.style.color = 'white';
+
+      result.style.backgroundColor = 'black';
+
+      result.style.padding = '8px 16px';
+
+      
+
+      // Aggiungi una linea bianca tra i risultati, tranne per l'ultimo
+
+      if (index < elementsToSearch.length - 1) {
+
+        var line = document.createElement('hr');
+
+        resultsList.appendChild(result);
+
+        resultsList.appendChild(line);
+
+      } else {
+
+        resultsList.appendChild(result);
+
+      }
+
+
+
+      resultsCount++;
+
+    }
+
+  });
+
+
+
+  var searchResults = document.getElementById('searchResults');
+
+  searchResults.style.display = resultsCount > 0 ? 'block' : 'none';
+
+}
+
+});
+                      
+
+
+                      // Funzione per adattare le dimensioni del video e della maschera alle variazioni della finestra
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // FUNZIONE PER MODIFICARE DISPOSIZIONE TESTO SOTTO VIDEO 
+
+
+
+ function resizeVideoAndMask() {
+    var videoContainer = document.getElementById("mask-container");
+    var video = document.getElementById("video");
+ 
+    // Imposta le dimensioni del video e della maschera in base alle dimensioni della finestra
+    var windowWidth = window.innerWidth;
+    var videoWidth = 604; // Larghezza originale del video
+    var videoHeight = 548.625; // Altezza originale del video
+
+    // Definisci valori di espansione massima e minima
+    var maxExpansion = 0.95; // Espansione massima
+    var minExpansion = 0.5; // Espansione minima
+
+    // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
+    var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
+
+    // Calcola la nuova altezza della maschera mantenendo le proporzioni originali del video
+    var newMaskHeight = (newMaskWidth / videoWidth) * videoHeight;
+
+    // Applica le nuove dimensioni alla maschera e al video
+    videoContainer.style.width = newMaskWidth + "px";
+    videoContainer.style.height = newMaskHeight + "px";
+    video.style.width = "100%";
+    video.style.height = "100%";
+
+  }
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO  BARRA DI RICERCA
+
+
+
+  
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+
+if (event.key === 'Enter') {
+
+  var filter = document.getElementById('searchInput').value.toUpperCase();
+
+  var resultsList = document.getElementById('resultsList');
+
+  var resultsCount = 0;
+
+
+
+  var elementsToSearch = document.querySelectorAll('.dispositivi-text, .informazioni-text, .DETTAGLI-text,, #tutorial-text');
+
+
+
+  resultsList.innerHTML = '';
+
+
+
+  elementsToSearch.forEach(function(element) {
+
+    if (resultsCount < 4 && element.textContent.toUpperCase().includes(filter)) {
+
+      var result = document.createElement('li');
+
+      result.textContent = element.textContent;
+
+
+
+      result.addEventListener('click', function() {
+
+        elementsToSearch.forEach(function(item) {
+
+          item.classList.remove('highlight');
+
+        });
+
+        element.classList.add('highlight');
+
+      });
+
+
+
+      resultsList.appendChild(result);
+
+      resultsCount++;
+
+    }
+
+  });
+
+
+
+  var searchResults = document.getElementById('searchResults');
+
+  searchResults.style.display = resultsCount > 0 ? 'block' : 'none';
+
+}
+
+});
+
+
+
+
+
+
+
+
+
+
+// RIDIMENSIONAMENTO BOTTONE
+
+
+  function resizeButton() {
+    var button = document.getElementById("prosegui-button");
+    var windowWidth = window.innerWidth;
+
+    // Imposta dimensioni massime e minime per il bottone
+    var maxButtonHeight = 53; // Altezza massima del bottone in pixel
+    var maxButtonwidth = 136; // Altezza massima del bottone in pixel
+    var minButtonHeight = 40; // Altezza minima del bottone in pixel
+    var minWindowSize = 900; // Larghezza minima della finestra per cambiare la posizione del bottone
+    var initialBottomDistance =50; // Distanza iniziale dal margine inferiore
+    var finalBottomDistance = 5; // Distanza finale dal margine inferiore
+
+    // Calcola la nuova altezza del bottone in base alle dimensioni della finestra
+    var newButtonHeight = Math.min(Math.max(windowWidth * 0.001, minButtonHeight), maxButtonHeight);
+
+    // Applica le nuove dimensioni e posizione al bottone solo se la finestra è sufficientemente ridotta in larghezza
+    if (windowWidth < minWindowSize) {
+      // Calcola la nuova distanza dal basso del bottone in base alle dimensioni della finestra
+      var newBottomDistance = initialBottomDistance - (initialBottomDistance - finalBottomDistance) * (windowWidth / minWindowSize);
+
+      // Applica le nuove dimensioni e posizione al bottone
+      button.style.height = newButtonHeight + "px";
+      button.style.bottom = newBottomDistance + "px";
+    } else {
+      // Ripristina la posizione iniziale
+      button.style.height = maxButtonHeight + "px";
+      button.style.bottom = initialBottomDistance + "px";
+    }
+
+    // Regola il font-size proporzionalmente all'altezza del bottone
+    var fontSizePercentage = (newButtonHeight / maxButtonHeight) * 100;
+    button.style.fontSize = fontSizePercentage + "%";
+  }
+
+  // Chiamata iniziale per adattare le dimensioni del bottone quando la pagina viene caricata
+  window.addEventListener("load", function () {
+    resizeButton();
+  });
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", function () {
+    resizeButton();
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function adjustTextProperties() {
+    var windowWidth = window.innerWidth;
+
+    // Definisci la dimensione minima della finestra per applicare le modifiche
+    var minWindowSize = 768;
+
+    // Imposta le proprietà iniziali e finali per le scritte
+
+
+       //TUTORIAL
+    var initialFontSizeTutorial = 42;
+    var finalFontSizeTutorial = 25;
+    var initialTopTutorial = 36;
+    var finalTopTutorial = 80;
+
+    //CAPITOLO
+
+    var initialFontSizePreset = 30;
+    var finalFontSizePreset = 18;
+    var initialTopPreset = 97;
+    var finalTopPreset = 120;
+
+    var textTutorial = document.getElementById("tutorial-text");
+    var textPreset = document.querySelector(".preset-text");
+
+    // Se la larghezza della finestra è inferiore alla dimensione minima
+    if (windowWidth < minWindowSize) {
+        // Aggiorna le proprietà delle scritte
+        textTutorial.style.fontSize = finalFontSizeTutorial + "pt";
+        textTutorial.style.top = finalTopTutorial + "px";
+
+        textPreset.style.fontSize = finalFontSizePreset + "pt";
+        textPreset.style.top = finalTopPreset + "px";
+    } else {
+        // Ripristina le proprietà originali delle scritte
+        textTutorial.style.fontSize = initialFontSizeTutorial + "pt";
+        textTutorial.style.top = initialTopTutorial + "px";
+
+        textPreset.style.fontSize = initialFontSizePreset + "pt";
+        textPreset.style.top = initialTopPreset + "px";
+    }
+}
+
+// Chiamata iniziale per adattare le proprietà delle scritte quando la pagina viene caricata
+window.addEventListener("load", function () {
+    adjustTextProperties();
+});
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", function () {
+    adjustTextProperties();
+});
+
+
+
+
+
+//ISTRUZIONI MODIFICA FONT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Funzione per regolare dimensioni e posizione dell'immagine "home-icon-top-right" in base alla larghezza della finestra
+function adjustHomeIconTopRight() {
+    var windowWidth = window.innerWidth;
+    var initialTopMargin = 36; // Margine alto iniziale
+    var initialRightMargin = 36; // Margine destro iniziale
+    var finalTopMargin = 40; // Margine alto finale
+    var reductionPercentage = 40; // Percentuale di riduzione
+
+    var homeIconTopRight = document.getElementById("home-icon-top-right");
+
+    if (windowWidth < 600) {
+        // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
+        var newWidth = (100 - reductionPercentage) / 100 * homeIconTopRight.naturalWidth;
+
+        // Applica le nuove dimensioni e posizione all'immagine
+        homeIconTopRight.style.width = newWidth + "px";
+        homeIconTopRight.style.height = "auto"; // Manteniamo le proporzioni
+        homeIconTopRight.style.top = finalTopMargin + "px";
+        homeIconTopRight.style.right = initialRightMargin + "px";
+    } else {
+        // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
+        homeIconTopRight.style.width = "30px";
+        homeIconTopRight.style.height = "30px";
+        homeIconTopRight.style.top = initialTopMargin + "px";
+        homeIconTopRight.style.right = initialRightMargin + "px";
+    }
+}
+
+// Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
+window.addEventListener("load", adjustHomeIconTopRight);
+
+// Aggiungi un listener per il ridimensionamento della finestra
+window.addEventListener("resize", adjustHomeIconTopRight);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Aggiungi l'evento click per aprire una nuova scheda e scaricare il file PDF
+        document.getElementById('download-link').addEventListener('click', function() {
+            window.open(this.href, '_blank');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Funzione per regolare dimensioni e posizione dell'immagine "image-bottom-left" in base alla larghezza della finestra
+
+
+                                        function adjustImageBottomLeft() {
+                                            var windowWidth = window.innerWidth;
+                                            var initialBottomMargin = 36; // Margine sotto iniziale
+                                            var initialLeftMargin = 36; // Margine sinistro iniziale
+                                            var finalBottomMargin = 10; // Margine sotto finale
+                                            var reductionPercentage = 70; // Percentuale di riduzione
+
+                                            var imageBottomLeft = document.getElementById("image-bottom-left");
+
+                                            if (windowWidth < 600) {
+                                                // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
+                                                var newWidth = (100 - reductionPercentage) / 100 * imageBottomLeft.naturalWidth;
+
+                                                // Applica le nuove dimensioni e posizione all'immagine
+                                                imageBottomLeft.style.width = newWidth + "px";
+                                                imageBottomLeft.style.height = "auto"; // Manteniamo le proporzioni
+                                                imageBottomLeft.style.bottom = finalBottomMargin + "px";
+                                                imageBottomLeft.style.left = initialLeftMargin + "px";
+                                            } else {
+                                                // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
+                                                imageBottomLeft.style.width = "180px";
+                                                imageBottomLeft.style.height = "30px";
+                                                imageBottomLeft.style.bottom = initialBottomMargin + "px";
+                                                imageBottomLeft.style.left = initialLeftMargin + "px";
+                                            }
+                                        }
+
+                                        // Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
+                                        window.addEventListener("load", adjustImageBottomLeft);
+
+                                        // Aggiungi un listener per il ridimensionamento della finestra
+                                        window.addEventListener("resize", adjustImageBottomLeft);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Chiamata iniziale per adattare le dimensioni quando la pagina viene caricata
+  window.addEventListener("load", resizeVideoAndMask);
+
+  // Aggiungi un listener per il ridimensionamento della finestra
+  window.addEventListener("resize", resizeVideoAndMask);
+
+
+
+
+  
+
+
+                          var video = document.getElementById("video");
+
+                          var text1 = document.querySelector(".text:nth-child(1)");
+                          var text2 = document.querySelector(".text:nth-child(2)");
+                          var text3 = document.querySelector(".text:nth-child(3)");
+                          var text4 = document.querySelector(".text:nth-child(4)");
+
+                          video.addEventListener("timeupdate", function() {
+                            var currentTime = video.currentTime;
+
+                            if (currentTime >= 0 && currentTime <= 3.9) {
+                              text1.style.color = "black";
+                            } else {
+                              text1.style.color = "lightgray";
+                            }
+
+                            if (currentTime >= 4 && currentTime <= 5.9) {
+                              text2.style.color = "black";
+                            } else {
+                              text2.style.color = "lightgray";
+                            }
+
+                            if (currentTime >= 6 && currentTime <= 24) {
+                              text3.style.color = "black";
+                            
+                            } else {
+                              text3.style.color = "lightgray";
+                              
+                            }
+
+                            if (currentTime >= 24 && currentTime <= 27) {
+                          
+                              text4.style.color = "black";
+                            } else {
+                          
+                              text4.style.color = "lightgray";
+                            }
+                          });
+
+                          function seekTo(time) {
+  video.currentTime = time;
+}
+
+
+
+var video = document.getElementById("video");
+
+
+// POP UP
+
+
+// Quando il video finisce, mostra il rettangolo e il pop-up
+
+
+
+video.addEventListener("ended", function () {
+    setTimeout(() => {
+        document.getElementById('backgroundRectangle').style.opacity = 1;
+        document.getElementById('popup').style.display = 'block';
+    }, 1000); // Dopo 4 secondi dalla fine del video
+});
+
+// Funzione per chiudere il pop-up
+function closePopup() {
+    document.getElementById('popup').classList.add('fadeOutAnimation');
+    setTimeout(() => {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('backgroundRectangle').style.opacity = 0;
+    }, 500); // Dopo l'animazione di fadeOut
+}
+
+
+ // Blocca lo scorrimento
+
+
+ 
+
+
+
+
+
+// PAGINA SUCCESSIVA
+
+
+                          function navigateToNextPage() {
+                            // Inserisci qui il collegamento alla tua pagina successiva
+                            window.location.href ="12_impostazione%20dei%20trasmettitori%20wireless.html";
+                          }
+  </script>
+</body>
+</html>
