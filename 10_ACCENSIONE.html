@@ -622,11 +622,12 @@ COMEPI*/
 
 
       <div id="text-container">
-        <div class="text" onclick="seekTo(0)">1. Eseguire la procedura di accensione</div>
-        <div class="text" onclick="seekTo(19)">2. Premere e tenere premuto il tasto CONFIG per un tempo superiore a 15 secondi</div>
-        <div class="text" onclick="seekTo(22)">3. Il lampeggio dei led CH1 – CH2 – CH3 – CH4 indica che il Preset della scheda è andato a buon fine</div>
-        <div class="text" onclick="seekTo(24)">4. Spegnere e riaccendere la scheda per entrare nella modalità operativa</div>
-      </div>
+        <div class="text" onclick="seekTo(2)">1.Fornire l’alimentazione alla scheda.</div>
+        <div class="text" onclick="seekTo(4)">3.Utilizzare solamente alimentazione proveniente da alimentatore 24Vdc conforme alle
+Direttive di riferimento. Non connettere direttamente alla rete elettrica di distribuzione.</div>
+  
+        <div class="text" onclick="seekTo(6)">2. Tensione di alimentazione: 24Vdc (-15% … +10%)</div>
+        <div class="text" onclick="seekTo(14)">4. All’accensione si accendono i led CH1 – CH2 – CH3 – CH4</div>
 
   
       <div id="ISTRUZIONI-text">ISTRUZIONI</div>
@@ -688,7 +689,7 @@ ICONE -->
 
     <!-- TESTI-->
 
-              <div class="preset-text">ACCENSIONE E PRESET DEL DISPOSITIVO</div>
+              <div class="preset-text">ACCENSIONE DEL DISPOSITIVO</div>
 
               <div id="tutorial-text">Tutorial</div>
 
@@ -1243,19 +1244,19 @@ window.addEventListener("resize", adjustHomeIconTopRight);
                           video.addEventListener("timeupdate", function() {
                             var currentTime = video.currentTime;
 
-                            if (currentTime >= 0 && currentTime <= 18) {
+                            if (currentTime >= 0 && currentTime <= 3.9) {
                               text1.style.color = "black";
                             } else {
                               text1.style.color = "lightgray";
                             }
 
-                            if (currentTime >= 19 && currentTime <= 21) {
+                            if (currentTime >= 4 && currentTime <= 5.9) {
                               text2.style.color = "black";
                             } else {
                               text2.style.color = "lightgray";
                             }
 
-                            if (currentTime >= 22 && currentTime <= 24) {
+                            if (currentTime >= 6 && currentTime <= 24) {
                               text3.style.color = "black";
                             
                             } else {
@@ -1292,7 +1293,7 @@ video.addEventListener("ended", function () {
     setTimeout(() => {
         document.getElementById('backgroundRectangle').style.opacity = 1;
         document.getElementById('popup').style.display = 'block';
-    }, 2000); // Dopo 4 secondi dalla fine del video
+    }, 1000); // Dopo 4 secondi dalla fine del video
 });
 
 // Funzione per chiudere il pop-up
