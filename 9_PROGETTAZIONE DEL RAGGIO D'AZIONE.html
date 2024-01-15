@@ -230,7 +230,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
         @media (max-width: 1500px) {
             #download-icon {
               left: 660px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -238,7 +238,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
             @media (max-width: 1304px) {
             #download-icon {
               left: 650px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -246,7 +246,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
             @media (max-width: 1300px) {
             #download-icon {
               left: 625px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -254,7 +254,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
             @media (max-width: 1200px) {
             #download-icon {
               left: 580px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -264,7 +264,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
             @media (max-width: 1100px) {
             #download-icon {
               left: 520px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -491,8 +491,8 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
     /* BOTTONE PROSEGUI  CON ROLLOVER*/
 
                             #prosegui-button {
-                            position: absolute;
-                            bottom: 100px; /* Distanza iniziale dal margine inferiore */
+                            position: fixed;
+                            bottom: 50px; /* Distanza iniziale dal margine inferiore */
                             right: 36px; /* Distanza iniziale dal margine destro */
                             width: 136px;
                             height: 53px; /* Altezza desiderata del bottone */
@@ -512,7 +512,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                             color: black;
                           }
 
-    /* COMEPI*/
+    /* 
 
 
                               #image-bottom-left {
@@ -522,7 +522,7 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
                                 width: 180px;
                                 height: 30px;
                               }
-    
+    COMEPI*/
 
     /* ICONA CASA*/
 
@@ -670,12 +670,12 @@ width: fit-content; /* Larghezza dinamica in base al contenuto */
 
 
 
-    <!--ICONE -->
+    <!--
 
 
               <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
-
+ICONE -->
 
 
 
@@ -866,7 +866,7 @@ if (event.key === 'Enter') {
     var videoHeight = 548.625; // Altezza originale del video
 
     // Definisci valori di espansione massima e minima
-    var maxExpansion = 1; // Espansione massima
+    var maxExpansion = 0.95; // Espansione massima
     var minExpansion = 0.5; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
