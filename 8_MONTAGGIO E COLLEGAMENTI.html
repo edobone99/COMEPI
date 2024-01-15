@@ -809,8 +809,8 @@ var video = document.getElementById("video");
     var videoHeight = 548.625; // Altezza originale del video
 
     // Definisci valori di espansione massima e minima
-    var maxExpansion = 1; // Espansione massima
-    var minExpansion = 0.5; // Espansione minima
+    var maxExpansion = 0.85; // Espansione massima
+    var minExpansion = 0.55; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
     var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
