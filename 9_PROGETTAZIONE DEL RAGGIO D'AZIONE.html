@@ -991,7 +991,7 @@ if (event.key === 'Enter') {
     var maxButtonwidth = 136; // Altezza massima del bottone in pixel
     var minButtonHeight = 40; // Altezza minima del bottone in pixel
     var minWindowSize = 900; // Larghezza minima della finestra per cambiare la posizione del bottone
-    var initialBottomDistance = 100; // Distanza iniziale dal margine inferiore
+    var initialBottomDistance = 50; // Distanza iniziale dal margine inferiore
     var finalBottomDistance = 5; // Distanza finale dal margine inferiore
 
     // Calcola la nuova altezza del bottone in base alle dimensioni della finestra
@@ -1266,14 +1266,6 @@ function closePopup() {
 
 
  
-
-    // Riabilita lo scorrimento
-    function enableScroll() {
-        document.body.style.overflow = '';
-    }
-
-    // Chiamata per disabilitare lo scorrimento quando la pagina viene caricata
-    window.addEventListener("load", disableScroll);
 
 
 
