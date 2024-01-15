@@ -15,8 +15,7 @@
                               background-image: url ("IMMAGINI\SFONDO\sfondo grigio piu scuro.jpg"); /* Sostituisci con il percorso dello sfondo */
                               background-size: cover;
                               background-position: center;
-                              background-repeat: no-repeat;
-                              overflow-y: hidden;
+                
 
                             }
 
@@ -213,7 +212,7 @@
                            #download-icon {
                               position: fixed;
                               left: 690px;
-                              bottom: 110px;
+                              bottom: 70px;
                               width: 22px;
                               height: 31px;
                             
@@ -223,7 +222,7 @@
         @media (max-width: 1500px) {
             #download-icon {
               left: 660px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -231,7 +230,7 @@
             @media (max-width: 1304px) {
             #download-icon {
               left: 650px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -239,7 +238,7 @@
             @media (max-width: 1300px) {
             #download-icon {
               left: 625px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -247,7 +246,7 @@
             @media (max-width: 1200px) {
             #download-icon {
               left: 580px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -257,7 +256,7 @@
             @media (max-width: 1100px) {
             #download-icon {
               left: 520px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -281,7 +280,7 @@
 /* TESTO CON ISTRUZIONI  */
 
                               #text-container {
-                                position: fixed;
+                                position: absolute;
                                 top: 245px;
                                 left: 678px;
                                 display: flex;
@@ -408,7 +407,7 @@
 
                               #ISTRUZIONI-text{
 
-                                  position: fixed;
+                                  position: absolute;
                                 top: 150px;
                                 left: 678px;
                                 font-size: 35pt;
@@ -542,7 +541,7 @@
 
                             #prosegui-button {
                             position: fixed;
-                            bottom: 100px; /* Distanza iniziale dal margine inferiore */
+                            bottom: 50px; /* Distanza iniziale dal margine inferiore */
                             right: 36px; /* Distanza iniziale dal margine destro */
                             width: 136px;
                             height: 53px; /* Altezza desiderata del bottone */
@@ -562,7 +561,7 @@
                             color: black;
                           }
 
-    /* COMEPI*/
+    /*
 
 
                               #image-bottom-left {
@@ -572,7 +571,7 @@
                                 width: 180px;
                                 height: 30px;
                               }
-    
+     COMEPI*/
 
     /* ICONA CASA*/
 
@@ -714,13 +713,13 @@
 
 
 
-    <!--ICONE -->
+    <!--
 
 
               <img id="image-bottom-left" src="IMMAGINI\comepi_srl_cover2.png" alt="Immagine" />
 
 
-
+ICONE -->
 
 
               <a href="INDICE%20VIDEO.html">
@@ -929,7 +928,7 @@ var video = document.getElementById("video");
     var videoHeight = 548.625; // Altezza originale del video
 
     // Definisci valori di espansione massima e minima
-    var maxExpansion = 1; // Espansione massima
+    var maxExpansion =0.95; // Espansione massima
     var minExpansion = 0.5; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
@@ -1010,7 +1009,7 @@ window.addEventListener("resize", function () {
     var maxButtonwidth = 136; // Altezza massima del bottone in pixel
     var minButtonHeight = 40; // Altezza minima del bottone in pixel
     var minWindowSize = 900; // Larghezza minima della finestra per cambiare la posizione del bottone
-    var initialBottomDistance = 100; // Distanza iniziale dal margine inferiore
+    var initialBottomDistance = 50; // Distanza iniziale dal margine inferiore
     var finalBottomDistance = 5; // Distanza finale dal margine inferiore
 
     // Calcola la nuova altezza del bottone in base alle dimensioni della finestra
@@ -1324,17 +1323,7 @@ function closePopup() {
 
 
  
- function disableScroll() {
-        document.body.style.overflow = 'hidden';
-    }
 
-    // Riabilita lo scorrimento
-    function enableScroll() {
-        document.body.style.overflow = '';
-    }
-
-    // Chiamata per disabilitare lo scorrimento quando la pagina viene caricata
-    window.addEventListener("load", disableScroll);
 
 
 
