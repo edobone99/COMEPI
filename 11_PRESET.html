@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0053)https://edobone99.github.io/COMEPI/10_ACCENSIONE.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COMEPI Preset del dispositivo</title>
   <style>
@@ -606,8 +606,8 @@ COMEPI*/
 
 
 
-      <div id="mask-container">
-        <video id="video" controls autoplay playsinline disablePictureInPicture>
+      <div id="mask-container" style="width: 573.8px; height: 521.194px;">
+        <video id="video" controls="" autoplay="" playsinline="" disablepictureinpicture="" style="width: 100%; height: 100%;">
           <!-- Inserisci qui il percorso del tuo video -->
           <source src="2-PROCEDURA DI ACCENSIONE2.mp4" type="video/mp4">
           Il tuo browser non supporta il tag video.
@@ -622,12 +622,11 @@ COMEPI*/
 
 
       <div id="text-container">
-        <div class="text" onclick="seekTo(2)">1.Fornire l’alimentazione alla scheda.</div>
-        <div class="text" onclick="seekTo(4)">3.Utilizzare solamente alimentazione proveniente da alimentatore 24Vdc conforme alle
-Direttive di riferimento. Non connettere direttamente alla rete elettrica di distribuzione.</div>
-  
-        <div class="text" onclick="seekTo(6)">2. Tensione di alimentazione: 24Vdc (-15% … +10%)</div>
-        <div class="text" onclick="seekTo(14)">4. All’accensione si accendono i led CH1 – CH2 – CH3 – CH4</div>
+        <div class="text" onclick="seekTo(0)" style="color: black;">1. Eseguire la procedura di accensione</div>
+        <div class="text" onclick="seekTo(19)" style="color: lightgray;">2. Premere e tenere premuto il tasto CONFIG per un tempo superiore a 15 secondi</div>
+        <div class="text" onclick="seekTo(22)" style="color: lightgray;">3. Il lampeggio dei led CH1 – CH2 – CH3 – CH4 indica che il Preset della scheda è andato a buon fine</div>
+        <div class="text" onclick="seekTo(24)" style="color: lightgray;">4. Spegnere e riaccendere la scheda per entrare nella modalità operativa</div>
+      </div>
 
   
       <div id="ISTRUZIONI-text">ISTRUZIONI</div>
@@ -637,8 +636,8 @@ Direttive di riferimento. Non connettere direttamente alla rete elettrica di dis
 
     </div>
       
-      <a id="download-link" href="http://www.comepi.eu/wp-content/uploads/2020/05/010-ISTR-03-FC-1019-00-wirelessbatteryless-ITA.pdf" target="_blank" download>
-        <img id="download-icon" src="IMMAGINI\catalogo.png" alt="Download PDF">
+      <a id="download-link" href="http://www.comepi.eu/wp-content/uploads/2020/05/010-ISTR-03-FC-1019-00-wirelessbatteryless-ITA.pdf" target="_blank" download="">
+        <img id="download-icon" src="./COMEPI Preset del dispositivo_files/catalogo.png" alt="Download PDF">
       </a>
 
     
@@ -661,7 +660,7 @@ Direttive di riferimento. Non connettere direttamente alla rete elettrica di dis
 
     <!-- BOTTONI-->
 
-               <div id="prosegui-button" onclick="navigateToNextPage()">PROSEGUI</div>
+               <div id="prosegui-button" onclick="navigateToNextPage()" style="height: 53px; bottom: 50px; font-size: 75.4717%;">PROSEGUI</div>
 
 
 
@@ -674,8 +673,8 @@ ICONE -->
 
 
 
-              <a href="INDICE%20VIDEO.html">
-                <img id="home-icon-top-right" src="IMMAGINI\Risorsa 2.png" alt="Home Icon">
+              <a href="https://edobone99.github.io/COMEPI/INDICE%20VIDEO.html">
+                <img id="home-icon-top-right" src="./COMEPI Preset del dispositivo_files/Risorsa 2.png" alt="Home Icon" style="width: 30px; height: 30px; top: 36px; right: 36px;">
 
 
 
@@ -689,9 +688,9 @@ ICONE -->
 
     <!-- TESTI-->
 
-              <div class="preset-text">ACCENSIONE DEL DISPOSITIVO</div>
+              <div class="preset-text" style="font-size: 30pt; top: 97px;">ACCENSIONE E PRESET DEL DISPOSITIVO</div>
 
-              <div id="tutorial-text">Tutorial</div>
+              <div id="tutorial-text" style="font-size: 42pt; top: 36px;">Tutorial</div>
 
 
 
@@ -1244,19 +1243,19 @@ window.addEventListener("resize", adjustHomeIconTopRight);
                           video.addEventListener("timeupdate", function() {
                             var currentTime = video.currentTime;
 
-                            if (currentTime >= 0 && currentTime <= 3.9) {
+                            if (currentTime >= 0 && currentTime <= 18) {
                               text1.style.color = "black";
                             } else {
                               text1.style.color = "lightgray";
                             }
 
-                            if (currentTime >= 4 && currentTime <= 5.9) {
+                            if (currentTime >= 19 && currentTime <= 21) {
                               text2.style.color = "black";
                             } else {
                               text2.style.color = "lightgray";
                             }
 
-                            if (currentTime >= 6 && currentTime <= 24) {
+                            if (currentTime >= 22 && currentTime <= 24) {
                               text3.style.color = "black";
                             
                             } else {
@@ -1293,7 +1292,7 @@ video.addEventListener("ended", function () {
     setTimeout(() => {
         document.getElementById('backgroundRectangle').style.opacity = 1;
         document.getElementById('popup').style.display = 'block';
-    }, 1000); // Dopo 4 secondi dalla fine del video
+    }, 2000); // Dopo 4 secondi dalla fine del video
 });
 
 // Funzione per chiudere il pop-up
@@ -1323,5 +1322,6 @@ function closePopup() {
                             window.location.href ="12_impostazione%20dei%20trasmettitori%20wireless.html";
                           }
   </script>
-</body>
-</html>
+
+
+</body></html>
