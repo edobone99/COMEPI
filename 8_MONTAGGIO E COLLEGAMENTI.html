@@ -208,7 +208,7 @@
 #download-icon {
                               position: fixed;
                               left: 690px;
-                              bottom: 110px;
+                              bottom: 70px;
                               width: 22px;
                               height: 31px;
                             
@@ -218,7 +218,7 @@
         @media (max-width: 1500px) {
             #download-icon {
               left: 660px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -226,7 +226,7 @@
             @media (max-width: 1304px) {
             #download-icon {
               left: 650px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -234,7 +234,7 @@
             @media (max-width: 1300px) {
             #download-icon {
               left: 625px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -242,7 +242,7 @@
             @media (max-width: 1200px) {
             #download-icon {
               left: 580px;
-                bottom: 110px;
+                bottom: 70px;
                 width: 15px; /* Ridimensiona del 30% rispetto all'originale */
                 height: 22px; /* Ridimensiona del 30% rispetto all'originale */
             }
@@ -479,8 +479,8 @@
     /* BOTTONE PROSEGUI  CON ROLLOVER*/
 
                             #prosegui-button {
-                            position: absolute;
-                            bottom: 100px; /* Distanza iniziale dal margine inferiore */
+                            position: fixed;
+                            bottom: 50px; /* Distanza iniziale dal margine inferiore */
                             right: 36px; /* Distanza iniziale dal margine destro */
                             width: 136px;
                             height: 53px; /* Altezza desiderata del bottone */
@@ -504,7 +504,7 @@
 
 
                               #image-bottom-left {
-                                position: absolute;
+                                position: fixed;
                                 bottom: 36px;
                                 left: 36px;
                                 width: 180px;
@@ -890,7 +890,7 @@ window.addEventListener("resize", function () {
     var maxButtonwidth = 136; // Altezza massima del bottone in pixel
     var minButtonHeight = 40; // Altezza minima del bottone in pixel
     var minWindowSize = 900; // Larghezza minima della finestra per cambiare la posizione del bottone
-    var initialBottomDistance = 100; // Distanza iniziale dal margine inferiore
+    var initialBottomDistance = 50; // Distanza iniziale dal margine inferiore
     var finalBottomDistance = 5; // Distanza finale dal margine inferiore
 
     // Calcola la nuova altezza del bottone in base alle dimensioni della finestra
