@@ -276,7 +276,7 @@
 /* TESTO CON ISTRUZIONI  */
 
                               #text-container {
-                                position: fixed;
+                                position: ABSOLUTE;
                                 top: 245px;
                                 left: 678px;
                                 display: flex;
@@ -346,7 +346,7 @@
 
                               #ISTRUZIONI-text{
 
-                                  position: fixed;
+                                  position: absolute;
                                 top: 150px;
                                 left: 678px;
                                 font-size: 35pt;
@@ -803,7 +803,7 @@ function resizeVideoAndMask() {
     var videoHeight = 548.625; // Altezza originale del video
 
     // Definisci valori di espansione massima e minima
-    var maxExpansion = 1; // Espansione massima
+    var maxExpansion = 0.95; // Espansione massima
     var minExpansion = 0.5; // Espansione minima
 
     // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
