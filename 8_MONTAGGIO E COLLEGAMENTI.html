@@ -638,9 +638,10 @@
     <!--ICONE -->
 
 
+    <!-- 
               <img id="image-bottom-left" src="IMMAGINI/comepi_srl_cover2.png" alt="Immagine" />
 
-
+TESTI-->
 
 
 
@@ -795,32 +796,31 @@ var video = document.getElementById("video");
 function resizeVideoAndMask() {
     var videoContainer = document.getElementById("mask-container");
     var video = document.getElementById("video");
-    var textContainer = document.querySelector(".text-container");
-    var imageBottomLeft = document.getElementById("image-bottom-left");
-
-    var videoWidth = 604;
-    var videoHeight = 548.625;
-
-    // Imposta il rapporto percentuale tra la distanza della maschera dal margine destro e dal margine inferiore
-    var percentualDistanceFromRight = 6; // Modifica questo valore secondo le tue esigenze
-    var percentualDistanceFromBottom = 10; // Modifica questo valore secondo le tue esigenze
-
-    // Calcola le nuove dimensioni basate sul rapporto percentuale
+ 
+    // Imposta le dimensioni del video e della maschera in base alle dimensioni della finestra
     var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
+    var videoWidth = 604; // Larghezza originale del video
+    var videoHeight = 548.625; // Altezza originale del video
 
-    var maskWidthWithoutPercentage = windowWidth * (1 - percentualDistanceFromRight / 100) * 0.9; // Modifica il fattore 0.9 secondo le tue esigenze
-    var newMaskWidth = (maskWidthWithoutPercentage / videoWidth) * videoWidth;
+    // Definisci valori di espansione massima e minima
+    var maxExpansion = 1; // Espansione massima
+    var minExpansion = 0.5; // Espansione minima
 
+    // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
+    var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
+
+    // Calcola la nuova altezza della maschera mantenendo le proporzioni originali del video
     var newMaskHeight = (newMaskWidth / videoWidth) * videoHeight;
 
-    // Applica le nuove dimensioni alla maschera e al video mantenendo le proporzioni
+    // Applica le nuove dimensioni alla maschera e al video
     videoContainer.style.width = newMaskWidth + "px";
     videoContainer.style.height = newMaskHeight + "px";
     video.style.width = "100%";
     video.style.height = "100%";
-}
+ 
 
+
+  }
 
 
 
@@ -1080,38 +1080,6 @@ function resizeScrollGroup() {
 // Funzione per regolare dimensioni e posizione dell'immagine "image-bottom-left" in base alla larghezza della finestra
 
 
-                                        function adjustImageBottomLeft() {
-                                            var windowWidth = window.innerWidth;
-                                            var initialBottomMargin = 36; // Margine sotto iniziale
-                                            var initialLeftMargin = 36; // Margine sinistro iniziale
-                                            var finalBottomMargin = 10; // Margine sotto finale
-                                            var reductionPercentage = 70; // Percentuale di riduzione
-
-                                            var imageBottomLeft = document.getElementById("image-bottom-left");
-
-                                            if (windowWidth < 600) {
-                                                // Calcola la nuova dimensione basata sulla percentuale di riduzione solo se la larghezza è sotto 600px
-                                                var newWidth = (100 - reductionPercentage) / 100 * imageBottomLeft.naturalWidth;
-
-                                                // Applica le nuove dimensioni e posizione all'immagine
-                                                imageBottomLeft.style.width = newWidth + "px";
-                                                imageBottomLeft.style.height = "auto"; // Manteniamo le proporzioni
-                                                imageBottomLeft.style.bottom = finalBottomMargin + "px";
-                                                imageBottomLeft.style.left = initialLeftMargin + "px";
-                                            } else {
-                                                // Ripristina le dimensioni e la posizione originali se la larghezza è 600px o superiore
-                                                imageBottomLeft.style.width = "180px";
-                                                imageBottomLeft.style.height = "30px";
-                                                imageBottomLeft.style.bottom = initialBottomMargin + "px";
-                                                imageBottomLeft.style.left = initialLeftMargin + "px";
-                                            }
-                                        }
-
-                                        // Chiamata iniziale per adattare dimensioni e posizione dell'immagine quando la pagina viene caricata
-                                        window.addEventListener("load", adjustImageBottomLeft);
-
-                                        // Aggiungi un listener per il ridimensionamento della finestra
-                                        window.addEventListener("resize", adjustImageBottomLeft);
 
 
 
