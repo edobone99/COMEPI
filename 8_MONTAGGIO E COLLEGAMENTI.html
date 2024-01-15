@@ -799,34 +799,36 @@ var video = document.getElementById("video");
  // FUNZIONE PER MODIFICARE DISPOSIZIONE TESTO SOTTO VIDEO 
 
 
- function resizeVideoAndMask() {
+ // Funzione per adattare le dimensioni del video e della maschera alle variazioni della finestra
+function resizeVideoAndMask() {
     var videoContainer = document.getElementById("mask-container");
     var video = document.getElementById("video");
- 
-    // Imposta le dimensioni del video e della maschera in base alle dimensioni della finestra
+    var textContainer = document.querySelector(".text-container");
+    var imageBottomLeft = document.getElementById("image-bottom-left");
+
+    var videoWidth = 604;
+    var videoHeight = 548.625;
+
+    // Imposta il rapporto percentuale tra la distanza della maschera dal margine destro e dal margine inferiore
+    var percentualDistanceFromRight = 65; // Modifica questo valore secondo le tue esigenze
+    var percentualDistanceFromBottom = 10; // Modifica questo valore secondo le tue esigenze
+
+    // Calcola le nuove dimensioni basate sul rapporto percentuale
     var windowWidth = window.innerWidth;
-    var videoWidth = 604; // Larghezza originale del video
-    var videoHeight = 548.625; // Altezza originale del video
+    var windowHeight = window.innerHeight;
 
-    // Definisci valori di espansione massima e minima
-    var maxExpansion = 0.85; // Espansione massima
-    var minExpansion = 0.55; // Espansione minima
+    var maskWidthWithoutPercentage = windowWidth * (1 - percentualDistanceFromRight / 100) * 0.9; // Modifica il fattore 0.9 secondo le tue esigenze
+    var newMaskWidth = (maskWidthWithoutPercentage / videoWidth) * videoWidth;
 
-    // Calcola la nuova larghezza della maschera in base alla larghezza della finestra e ai valori di espansione
-    var newMaskWidth = Math.min(Math.max(windowWidth * 0.44, videoWidth * minExpansion), videoWidth * maxExpansion);
-
-    // Calcola la nuova altezza della maschera mantenendo le proporzioni originali del video
     var newMaskHeight = (newMaskWidth / videoWidth) * videoHeight;
 
-    // Applica le nuove dimensioni alla maschera e al video
+    // Applica le nuove dimensioni alla maschera e al video mantenendo le proporzioni
     videoContainer.style.width = newMaskWidth + "px";
     videoContainer.style.height = newMaskHeight + "px";
     video.style.width = "100%";
     video.style.height = "100%";
- 
+}
 
-
-  }
 
 
 
